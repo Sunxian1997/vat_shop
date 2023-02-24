@@ -4,7 +4,8 @@
 		{
 			"path": "pages/tabbar/tabbar-1/tabbar-1",
 			"style": {
-				"navigationBarTitleText": "首页"
+				"navigationBarTitleText": "首页",
+				"navigationBarBackgroundColor": "#f7e4e8"
 			}
 		},
 		{
@@ -34,6 +35,13 @@
 		{
 			"path": "pages/tabbar-3-detial/tabbar-3-qa/tabbar-3-qa",
 			"style": {}
+		},
+		{
+			"path": "pages/commodity/add/index",
+			"style": {
+				"navigationBarTitleText": "新增商品",
+				"navigationBarBackgroundColor": "#f7e4e8"
+			}
 		}
 	],
 	"globalStyle": {
@@ -43,7 +51,7 @@
 		"backgroundColor": "#F8F8F8"
 	},
 	"tabBar": {
-		"borderStyle": "#cac0c4",
+		"borderStyle": "white",
 		"backgroundColor": "#f7e4e8",
 		"color": "#000000",
 		"selectedColor": "#f33e54",
@@ -60,19 +68,19 @@
 				"text": "点单"
 			},
 			//#ifdef MP-WEIXIN
-			// {
-			// 	"pagePath": "pages/tabbar/tabbar-3/tabbar-3",
-			// 	"iconPath": "static/img/tabbar/add.png",
-			// 	"selectedIconPath": "static/img/tabbar/addactive.png",
-			// 	"text": "发布"
-			// },
+			{
+				"pagePath": "pages/tabbar/tabbar-3/tabbar-3",
+				"iconPath": "static/img/tabbar/add.png",
+				"selectedIconPath": "static/img/tabbar/addactive.png",
+				"text": "发布"
+			},
 			//#endif
 			//#ifndef MP-WEIXIN
-			// {
-			// 	"pagePath": "pages/tabbar/tabbar-3/tabbar-3",
-			// 	"iconPath": "static/img/tabbar/tabTwo.png",
-			// 	"selectedIconPath": "static/img/tabbar/tabTwo.png"
-			// },
+			{
+				"pagePath": "pages/tabbar/tabbar-3/tabbar-3",
+				"iconPath": "static/img/tabbar/add.png",
+				"selectedIconPath": "static/img/tabbar/addactive.png"
+			},
 			//#endif
 			{
 				"pagePath": "pages/tabbar/tabbar-4/tabbar-4",

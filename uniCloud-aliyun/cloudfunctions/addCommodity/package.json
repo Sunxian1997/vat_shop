@@ -1,0 +1,7 @@
+{
+  "name": "addCommodity",
+  "dependencies": {},
+  "extensions": {
+    "uni-cloud-jql": {}
+  }
+}

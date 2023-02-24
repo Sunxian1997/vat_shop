@@ -1,19 +1,15 @@
 <template>
 	<view class="content" :class="{'active':active}">
-		<image class="logo" :class="{'active':active}" src="../../../static/logo.png"  mode="aspectFit"></image>
+		<image class="logo" :class="{'active':active}" src="@/static/img/pretty/bg.jpg"  mode="scaleToFill"></image>
 		<view class="tabbar-box-wrap">
 			<view class="tabbar-box">
 				<view class="tabbar-box-item" @click="goToPage('/pages/tabbar-3-detial/tabbar-3-release/tabbar-3-release')">
-					<image class="box-image" src="../../../static/img/release.png" mode="aspectFit"></image>
-					<text class="explain">发图文</text>
+					<image class="box-image" src="@/static/img/pretty/photoAlbum.png" mode="aspectFit"></image>
+					<text class="explain">相册</text>
 				</view>
 				<view class="tabbar-box-item" @click="goToPage('/pages/tabbar-3-detial/tabbar-3-video/tabbar-3-video')">
-					<image class="box-image" src="../../../static/img/video.png" mode="aspectFit"></image>
-					<text class="explain">发视频</text>
-				</view>
-				<view class="tabbar-box-item" @click="goToPage('/pages/tabbar-3-detial/tabbar-3-qa/tabbar-3-qa')">
-					<image class="box-image" src="../../../static/img/qa.png" mode="aspectFit"></image>
-					<text class="explain">提问</text>
+					<image class="box-image" src="@/static/img/pretty/takePicture.png" mode="aspectFit"></image>
+					<text class="explain">拍照</text>
 				</view>
 			</view>
 		</view>
@@ -27,10 +23,17 @@ export default {
 			active: false
 		};
 	},
+	onTabItemTap(e) {
+		console.log('tab3----',e)
+		// this.active = !this.active
+		uni.navigateTo({
+			url:"/pages/commodity/add/index"
+		})
+	},
 	onLoad() {},
 	onShow() {
 		// setTimeout(() => {
-		this.active = true;
+		// this.active = true;
 		// }, 500);
 	},
 	onHide() {
@@ -67,9 +70,9 @@ export default {
 	}
 	.logo {
 		position: relative;
-		margin-top: -400upx;
-		width: 200upx;
-		height: 200upx;
+		// margin-top: -400upx;
+		width: 100%;
+		height: 100%;
 		// z-index: -1;
 		opacity: 0;
 		transition: opacity 0.3s;

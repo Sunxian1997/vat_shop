@@ -1,0 +1,7 @@
+{
+  "name": "uploadCommodityFile",
+  "dependencies": {},
+  "extensions": {
+    "uni-cloud-jql": {}
+  }
+}
