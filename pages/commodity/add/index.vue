@@ -65,7 +65,10 @@
 				tempPicUrls: [],
 				picUrls: [],
 				formData: {
-					baseInfo: {}
+					baseInfo: {
+						remark:'',
+						qualityGuaranteePeriod:''
+					}
 				},
 				rules: {
 					'baseInfo.name': {

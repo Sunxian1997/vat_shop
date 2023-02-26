@@ -4,8 +4,8 @@
 			<image :src="getImageUrl()" mode="scaleToFill" />
 		</view>
 		<view class="card-info">
-			<text class="commodity-name">{{cardInfo.name}}</text>
-			<text>¥ {{formaatMoney(cardInfo.price)}}</text>
+			<view class="commodity-name">{{cardInfo.name}}</view>
+			<view>¥ {{formaatMoney(cardInfo.price)}}</view>
 			<uni-dateformat :date="cardInfo.posttime" :threshold="[60000, 3600000]" format="MM-dd"></uni-dateformat>
 		</view> 
 	</view>
