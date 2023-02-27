@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "首页",
+  "navigationBarBackgroundColor": "#f7e4e8",
+  "usingComponents": {
+    "u-sticky": "/uni_modules/uview-ui/components/u-sticky/u-sticky",
+    "u--input": "/uni_modules/uview-ui/components/u--input/u--input",
+    "uni-icons": "/uni_modules/uni-icons/components/uni-icons/uni-icons"
+  }
+}

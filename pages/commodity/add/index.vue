@@ -137,7 +137,7 @@
 								uni.reLaunch({
 									url: "/pages/tabbar/tabbar-1/tabbar-1"
 								})
-							}, 100)
+							}, 2000)
 						})
 					}).catch(errors => {
 						uni.$u.toast('请按照要求填写信息')

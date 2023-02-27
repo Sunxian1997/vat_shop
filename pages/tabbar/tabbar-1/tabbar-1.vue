@@ -5,7 +5,7 @@
 				<u--input shape="circle" clearable prefixIcon="search" placeholder="请输入要查询的内容" border="surround"
 					v-model="searchKey" @change="change">
 					<template slot="suffix">
-						<!-- <uni-icons type="scan" size="18"></uni-icons> -->
+						<uni-icons type="scan" size="18"></uni-icons>
 					</template>
 				</u--input>
 				<text class="btn-search" @click="searchList">搜索</text>

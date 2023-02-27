@@ -9,9 +9,9 @@ exports.main = async (event, context) => {
 	if (name) {
 		res = await db.collection("commodity").where({
 			name: dbCmd.eq(name)
-		}).get()
+		}).orderBy('posttime','desc').get()
 	} else {
-		res = await db.collection("commodity").get()
+		res = await db.collection("commodity").orderBy('posttime','desc').get()
 	}
 
 	return res.data

@@ -1,0 +1,16 @@
+{
+  "navigationBarTitleText": "新增商品",
+  "navigationBarBackgroundColor": "#f7e4e8",
+  "usingComponents": {
+    "u-notify": "/uni_modules/uview-ui/components/u-notify/u-notify",
+    "uni-card": "/uni_modules/uni-card/components/uni-card/uni-card",
+    "u--form": "/uni_modules/uview-ui/components/u--form/u--form",
+    "u-form-item": "/uni_modules/uview-ui/components/u-form-item/u-form-item",
+    "u--input": "/uni_modules/uview-ui/components/u--input/u--input",
+    "u-slider": "/uni_modules/uview-ui/components/u-slider/u-slider",
+    "uni-datetime-picker": "/uni_modules/uni-datetime-picker/components/uni-datetime-picker/uni-datetime-picker",
+    "u--textarea": "/uni_modules/uview-ui/components/u--textarea/u--textarea",
+    "uni-file-picker": "/uni_modules/uni-file-picker/components/uni-file-picker/uni-file-picker",
+    "uni-fab": "/uni_modules/uni-fab/components/uni-fab/uni-fab"
+  }
+}
