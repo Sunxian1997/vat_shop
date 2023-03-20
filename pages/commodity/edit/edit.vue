@@ -48,7 +48,7 @@ export default {
 				{
 					iconPath: '/static/img/pretty/add.png',
 					selectedIconPath: '/static/img/pretty/add.png',
-					text: '新增',
+					text: '保存',
 					active: false
 				}
 			],
@@ -111,17 +111,18 @@ export default {
 							...this.formData.baseInfo,
 							picUrls: this.picUrls
 						};
+						 console.log('params---',params) 
 						uniCloud
 							.callFunction({
-								name: 'addCommodity',
+								name: 'uploadCommodity',
 								data: params
-							})
+							}) 
 							.then(res => {
 								this.$refs.uNotify.show({
 									top: 0,
 									type: 'success',
 									color: '#fff',
-									message: '新增商品成功',
+									message: '更新商品成功',
 									duration: 1000 * 2,
 									fontSize: 20,
 									safeAreaInsetTop: true
@@ -143,7 +144,7 @@ export default {
 			const { tempFiles, tempFilePaths } = e;
 			this.picUrls = tempFilePaths;
 		},
-
+ 
 		getDetail(id) {
 			uniCloud
 				.callFunction({
@@ -155,7 +156,13 @@ export default {
 				.then(res => {
 					console.log('获取商品详情---', res);
 					this.formData.baseInfo = res.result[0];
-					this.tempPicUrls = res.result[0].picUrls;
+					this.tempPicUrls = res.result[0].picUrls.map((item,index) => {
+						return {
+							name: `图片-${index}`,
+							extname: 'png',
+							url: item
+						};
+					});
 					this.picUrls = res.result[0].picUrls;
 					uni.setNavigationBarTitle({
 						title: this.formData.baseInfo

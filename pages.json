@@ -56,7 +56,16 @@
             "path" : "pages/commodity/edit/edit",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "",
+                "navigationBarTitleText": "编辑商品",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/tabbar/tabbar-5/problemFeedback/problemFeedback",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "问题反馈",
                 "enablePullDownRefresh": false
             }
             

@@ -102,13 +102,13 @@ var components
 try {
   components = {
     uSticky: function () {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-sticky/u-sticky */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-sticky/u-sticky")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-sticky/u-sticky.vue */ 259))
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-sticky/u-sticky */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-sticky/u-sticky")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-sticky/u-sticky.vue */ 270))
     },
     "u-Input": function () {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u--input/u--input */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u--input/u--input")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u--input/u--input.vue */ 267))
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u--input/u--input */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u--input/u--input")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u--input/u--input.vue */ 278))
     },
     uniIcons: function () {
-      return Promise.all(/*! import() | uni_modules/uni-icons/components/uni-icons/uni-icons */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-icons/components/uni-icons/uni-icons")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-icons/components/uni-icons/uni-icons.vue */ 273))
+      return Promise.all(/*! import() | uni_modules/uni-icons/components/uni-icons/uni-icons */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-icons/components/uni-icons/uni-icons")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-icons/components/uni-icons/uni-icons.vue */ 284))
     },
   }
 } catch (e) {
@@ -193,9 +193,6 @@ function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && 
 //
 //
 //
-//
-//
-//
 var _default = {
   components: {
     commodityCard: function commodityCard() {
@@ -215,19 +212,29 @@ var _default = {
   },
   methods: {
     change: function change() {},
+    // 调用扫码查询
+    scanningCode: function scanningCode() {
+      uni.scanCode({
+        success: function success(res) {
+          console.log('条码类型：' + res.scanType);
+          console.log('条码内容：' + res.result);
+          alert(res);
+        }
+      });
+    },
     searchList: function searchList() {
       this.getDatalist();
     },
     toDetail: function toDetail(target) {
       console.log('target---', target);
       uni.navigateTo({
-        url: "/pages/commodity/detail/detail?id=" + target._id
+        url: '/pages/commodity/detail/detail?id=' + target._id
       });
     },
     getDatalist: function getDatalist() {
       var _this = this;
       uniCloud.callFunction({
-        name: "getCommodityList",
+        name: 'getCommodityList',
         data: {
           name: this.searchKey
         }
@@ -322,7 +329,7 @@ var components
 try {
   components = {
     uniDateformat: function () {
-      return Promise.all(/*! import() | uni_modules/uni-dateformat/components/uni-dateformat/uni-dateformat */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-dateformat/components/uni-dateformat/uni-dateformat")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-dateformat/components/uni-dateformat/uni-dateformat.vue */ 281))
+      return Promise.all(/*! import() | uni_modules/uni-dateformat/components/uni-dateformat/uni-dateformat */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-dateformat/components/uni-dateformat/uni-dateformat")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-dateformat/components/uni-dateformat/uni-dateformat.vue */ 292))
     },
   }
 } catch (e) {

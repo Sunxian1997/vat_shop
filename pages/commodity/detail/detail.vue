@@ -24,7 +24,6 @@
 		</view>
 		<view class="file-box">
 			<view class="file-item" v-for="(item, index) in detailForm.picUrls" :key="index"><image draggable :src="item" mode="scaleToFill"></image></view>
-			<!-- <u-swiper :list="detailForm.picUrls"></u-swiper> -->
 		</view>
 		<u-modal :show="isShowModal" @confirm="modalConfirm" title="删除商品" showCancelButton @cancel="modalCancle">
 			<view class="" v-slot="content">删除后不可恢复，是否确认删除？</view>
@@ -60,7 +59,7 @@ export default {
 			if (e.index == 0) {
 				this.isShowModal = !this.isShowModal;
 			} else if (e.index == 1) {
-				uni.reLaunch({
+				uni.navigateTo({
 					url: '/pages/commodity/edit/edit?id='+this.detailForm._id
 				});
 			}

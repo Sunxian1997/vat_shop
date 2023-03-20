@@ -11,7 +11,9 @@
     "app-plus" : {
         "usingComponents" : true,
         "compilerVersion" : 3,
-        "modules" : {},
+        "modules" : {
+            "OAuth" : {}
+        },
         "distribute" : {
             "android" : {
                 "permissions" : [
@@ -32,8 +34,23 @@
                     "<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>"
                 ]
             },
-            "ios" : {},
-            "sdkConfigs" : {}
+            "ios" : {
+                "capabilities" : {
+                    "entitlements" : {
+                        "com.apple.developer.associated-domains" : [
+                            "applinks:static-mp-55db3ec2-1513-4c7b-ae9b-0ea08297ea87.next.bspapp.com"
+                        ]
+                    }
+                }
+            },
+            "sdkConfigs" : {
+                "oauth" : {
+                    "weixin" : {
+                        "appid" : "wx786043dff39fa0cd",
+                        "UniversalLinks" : "https://static-mp-55db3ec2-1513-4c7b-ae9b-0ea08297ea87.next.bspapp.com/uni-universallinks/__UNI__2F70C0B/"
+                    }
+                }
+            }
         }
     },
     "quickapp" : {},
@@ -51,5 +68,6 @@
             "base" : "./"
         },
         "title" : "商品管理系统"
-    }
+    },
+    "_spaceID" : "mp-55db3ec2-1513-4c7b-ae9b-0ea08297ea87"
 }

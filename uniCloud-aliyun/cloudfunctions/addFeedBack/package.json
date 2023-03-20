@@ -1,5 +1,5 @@
 {
-  "name": "uploadCommodityFile",
+  "name": "addFeedBack",
   "dependencies": {},
   "extensions": {
     "uni-cloud-jql": {}

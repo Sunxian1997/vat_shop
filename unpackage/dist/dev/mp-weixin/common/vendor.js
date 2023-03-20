@@ -9889,7 +9889,7 @@ var y = "development" === "development",
   k = m({
     "address": [
         "127.0.0.1",
-        "10.246.2.86",
+        "10.244.0.21",
         "10.0.0.79"
     ],
     "debugPort": 9000,
@@ -16930,6 +16930,12 @@ var _default = {
     "path": "pages/commodity/detail/detail",
     "style": {
       "navigationBarTitleText": "",
+      "enablePullDownRefresh": false
+    }
+  }, {
+    "path": "pages/commodity/edit/edit",
+    "style": {
+      "navigationBarTitleText": "编辑商品",
       "enablePullDownRefresh": false
     }
   }],
@@ -26400,12 +26406,59 @@ exports.default = _default;
 /* 256 */,
 /* 257 */,
 /* 258 */,
-/* 259 */,
+/* 259 */
+/*!***********************************************************!*\
+  !*** C:/Users/23196/Desktop/记账管理/vat_shop/const/const.js ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.uniFabParent = void 0;
+var uniFabParent = {
+  pattern: {
+    color: '#7A7E83',
+    backgroundColor: '#fff',
+    selectedColor: '#007AFF',
+    buttonColor: '#007AFF',
+    iconColor: '#fff'
+  },
+  content: [{
+    iconPath: '/static/img/oprationIcon/delete.png',
+    selectedIconPath: '/static/img/oprationIcon/delete.png',
+    text: '删除',
+    active: false
+  }, {
+    iconPath: '/static/img/oprationIcon/edit.png',
+    selectedIconPath: '/static/img/oprationIcon/edit.png',
+    text: '编辑',
+    active: false
+  }]
+};
+exports.uniFabParent = uniFabParent;
+
+/***/ }),
 /* 260 */,
 /* 261 */,
 /* 262 */,
 /* 263 */,
-/* 264 */
+/* 264 */,
+/* 265 */,
+/* 266 */,
+/* 267 */,
+/* 268 */,
+/* 269 */,
+/* 270 */,
+/* 271 */,
+/* 272 */,
+/* 273 */,
+/* 274 */,
+/* 275 */
 /*!**********************************************************************************************!*\
   !*** C:/Users/23196/Desktop/记账管理/vat_shop/uni_modules/uview-ui/components/u-sticky/props.js ***!
   \**********************************************************************************************/
@@ -26457,14 +26510,14 @@ exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
-/* 265 */,
-/* 266 */,
-/* 267 */,
-/* 268 */,
-/* 269 */,
-/* 270 */,
-/* 271 */,
-/* 272 */
+/* 276 */,
+/* 277 */,
+/* 278 */,
+/* 279 */,
+/* 280 */,
+/* 281 */,
+/* 282 */,
+/* 283 */
 /*!*********************************************************************************************!*\
   !*** C:/Users/23196/Desktop/记账管理/vat_shop/uni_modules/uview-ui/components/u-input/props.js ***!
   \*********************************************************************************************/
@@ -26669,12 +26722,12 @@ exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
-/* 273 */,
-/* 274 */,
-/* 275 */,
-/* 276 */,
-/* 277 */,
-/* 278 */
+/* 284 */,
+/* 285 */,
+/* 286 */,
+/* 287 */,
+/* 288 */,
+/* 289 */
 /*!************************************************************************************************!*\
   !*** C:/Users/23196/Desktop/记账管理/vat_shop/uni_modules/uni-icons/components/uni-icons/icons.js ***!
   \************************************************************************************************/
@@ -27695,14 +27748,14 @@ var _default = {
 exports.default = _default;
 
 /***/ }),
-/* 279 */,
-/* 280 */,
-/* 281 */,
-/* 282 */,
-/* 283 */,
-/* 284 */,
-/* 285 */,
-/* 286 */
+/* 290 */,
+/* 291 */,
+/* 292 */,
+/* 293 */,
+/* 294 */,
+/* 295 */,
+/* 296 */,
+/* 297 */
 /*!****************************************************************************************************************!*\
   !*** C:/Users/23196/Desktop/记账管理/vat_shop/uni_modules/uni-dateformat/components/uni-dateformat/date-format.js ***!
   \****************************************************************************************************************/
@@ -27919,12 +27972,12 @@ function friendlyDate(time, _ref) {
 }
 
 /***/ }),
-/* 287 */,
-/* 288 */,
-/* 289 */,
-/* 290 */,
-/* 291 */,
-/* 292 */
+/* 298 */,
+/* 299 */,
+/* 300 */,
+/* 301 */,
+/* 302 */,
+/* 303 */
 /*!**************************************************************************************!*\
   !*** C:/Users/23196/Desktop/记账管理/vat_shop/uni_modules/uview-ui/libs/mixin/button.js ***!
   \**************************************************************************************/
@@ -27954,7 +28007,7 @@ var _default = {
 exports.default = _default;
 
 /***/ }),
-/* 293 */
+/* 304 */
 /*!****************************************************************************************!*\
   !*** C:/Users/23196/Desktop/记账管理/vat_shop/uni_modules/uview-ui/libs/mixin/openType.js ***!
   \****************************************************************************************/
@@ -27996,7 +28049,7 @@ var _default = {
 exports.default = _default;
 
 /***/ }),
-/* 294 */
+/* 305 */
 /*!**********************************************************************************************!*\
   !*** C:/Users/23196/Desktop/记账管理/vat_shop/uni_modules/uview-ui/components/u-button/props.js ***!
   \**********************************************************************************************/
@@ -28175,14 +28228,14 @@ exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
-/* 295 */,
-/* 296 */,
-/* 297 */,
-/* 298 */,
-/* 299 */,
-/* 300 */,
-/* 301 */,
-/* 302 */
+/* 306 */,
+/* 307 */,
+/* 308 */,
+/* 309 */,
+/* 310 */,
+/* 311 */,
+/* 312 */,
+/* 313 */
 /*!**************************************************************************************************!*\
   !*** C:/Users/23196/Desktop/记账管理/vat_shop/uni_modules/uview-ui/components/u-cell-group/props.js ***!
   \**************************************************************************************************/
@@ -28214,14 +28267,14 @@ exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
-/* 303 */,
-/* 304 */,
-/* 305 */,
-/* 306 */,
-/* 307 */,
-/* 308 */,
-/* 309 */,
-/* 310 */
+/* 314 */,
+/* 315 */,
+/* 316 */,
+/* 317 */,
+/* 318 */,
+/* 319 */,
+/* 320 */,
+/* 321 */
 /*!********************************************************************************************!*\
   !*** C:/Users/23196/Desktop/记账管理/vat_shop/uni_modules/uview-ui/components/u-cell/props.js ***!
   \********************************************************************************************/
@@ -28349,14 +28402,14 @@ exports.default = _default2;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
-/* 311 */,
-/* 312 */,
-/* 313 */,
-/* 314 */,
-/* 315 */,
-/* 316 */,
-/* 317 */,
-/* 318 */
+/* 322 */,
+/* 323 */,
+/* 324 */,
+/* 325 */,
+/* 326 */,
+/* 327 */,
+/* 328 */,
+/* 329 */
 /*!*****************************************************************************************************!*\
   !*** C:/Users/23196/Desktop/记账管理/vat_shop/uni_modules/uview-ui/components/u-line-progress/props.js ***!
   \*****************************************************************************************************/
@@ -28402,14 +28455,14 @@ exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
-/* 319 */,
-/* 320 */,
-/* 321 */,
-/* 322 */,
-/* 323 */,
-/* 324 */,
-/* 325 */,
-/* 326 */
+/* 330 */,
+/* 331 */,
+/* 332 */,
+/* 333 */,
+/* 334 */,
+/* 335 */,
+/* 336 */,
+/* 337 */
 /*!**********************************************************************************************!*\
   !*** C:/Users/23196/Desktop/记账管理/vat_shop/uni_modules/uview-ui/components/u-notify/props.js ***!
   \**********************************************************************************************/
@@ -28476,21 +28529,21 @@ exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
-/* 327 */,
-/* 328 */,
-/* 329 */,
-/* 330 */,
-/* 331 */,
-/* 332 */,
-/* 333 */,
-/* 334 */,
-/* 335 */,
-/* 336 */,
-/* 337 */,
 /* 338 */,
 /* 339 */,
 /* 340 */,
-/* 341 */
+/* 341 */,
+/* 342 */,
+/* 343 */,
+/* 344 */,
+/* 345 */,
+/* 346 */,
+/* 347 */,
+/* 348 */,
+/* 349 */,
+/* 350 */,
+/* 351 */,
+/* 352 */
 /*!********************************************************************************************!*\
   !*** C:/Users/23196/Desktop/记账管理/vat_shop/uni_modules/uview-ui/components/u-form/props.js ***!
   \********************************************************************************************/
@@ -28553,12 +28606,12 @@ exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
-/* 342 */,
-/* 343 */,
-/* 344 */,
-/* 345 */,
-/* 346 */,
-/* 347 */
+/* 353 */,
+/* 354 */,
+/* 355 */,
+/* 356 */,
+/* 357 */,
+/* 358 */
 /*!*************************************************************************************************!*\
   !*** C:/Users/23196/Desktop/记账管理/vat_shop/uni_modules/uview-ui/components/u-form-item/props.js ***!
   \*************************************************************************************************/
@@ -28624,14 +28677,14 @@ exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
-/* 348 */,
-/* 349 */,
-/* 350 */,
-/* 351 */,
-/* 352 */,
-/* 353 */,
-/* 354 */,
-/* 355 */
+/* 359 */,
+/* 360 */,
+/* 361 */,
+/* 362 */,
+/* 363 */,
+/* 364 */,
+/* 365 */,
+/* 366 */
 /*!**********************************************************************************************!*\
   !*** C:/Users/23196/Desktop/记账管理/vat_shop/uni_modules/uview-ui/components/u-slider/props.js ***!
   \**********************************************************************************************/
@@ -28703,14 +28756,14 @@ exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
-/* 356 */,
-/* 357 */,
-/* 358 */,
-/* 359 */,
-/* 360 */,
-/* 361 */,
-/* 362 */,
-/* 363 */
+/* 367 */,
+/* 368 */,
+/* 369 */,
+/* 370 */,
+/* 371 */,
+/* 372 */,
+/* 373 */,
+/* 374 */
 /*!*************************************************************************************************************************!*\
   !*** C:/Users/23196/Desktop/记账管理/vat_shop/uni_modules/uni-datetime-picker/components/uni-datetime-picker/i18n/index.js ***!
   \*************************************************************************************************************************/
@@ -28725,9 +28778,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
-var _en = _interopRequireDefault(__webpack_require__(/*! ./en.json */ 364));
-var _zhHans = _interopRequireDefault(__webpack_require__(/*! ./zh-Hans.json */ 365));
-var _zhHant = _interopRequireDefault(__webpack_require__(/*! ./zh-Hant.json */ 366));
+var _en = _interopRequireDefault(__webpack_require__(/*! ./en.json */ 375));
+var _zhHans = _interopRequireDefault(__webpack_require__(/*! ./zh-Hans.json */ 376));
+var _zhHant = _interopRequireDefault(__webpack_require__(/*! ./zh-Hant.json */ 377));
 var _default = {
   en: _en.default,
   'zh-Hans': _zhHans.default,
@@ -28736,7 +28789,7 @@ var _default = {
 exports.default = _default;
 
 /***/ }),
-/* 364 */
+/* 375 */
 /*!************************************************************************************************************************!*\
   !*** C:/Users/23196/Desktop/记账管理/vat_shop/uni_modules/uni-datetime-picker/components/uni-datetime-picker/i18n/en.json ***!
   \************************************************************************************************************************/
@@ -28746,7 +28799,7 @@ exports.default = _default;
 module.exports = JSON.parse("{\"uni-datetime-picker.selectDate\":\"select date\",\"uni-datetime-picker.selectTime\":\"select time\",\"uni-datetime-picker.selectDateTime\":\"select datetime\",\"uni-datetime-picker.startDate\":\"start date\",\"uni-datetime-picker.endDate\":\"end date\",\"uni-datetime-picker.startTime\":\"start time\",\"uni-datetime-picker.endTime\":\"end time\",\"uni-datetime-picker.ok\":\"ok\",\"uni-datetime-picker.clear\":\"clear\",\"uni-datetime-picker.cancel\":\"cancel\",\"uni-datetime-picker.year\":\"-\",\"uni-datetime-picker.month\":\"\",\"uni-calender.MON\":\"MON\",\"uni-calender.TUE\":\"TUE\",\"uni-calender.WED\":\"WED\",\"uni-calender.THU\":\"THU\",\"uni-calender.FRI\":\"FRI\",\"uni-calender.SAT\":\"SAT\",\"uni-calender.SUN\":\"SUN\",\"uni-calender.confirm\":\"confirm\"}");
 
 /***/ }),
-/* 365 */
+/* 376 */
 /*!*****************************************************************************************************************************!*\
   !*** C:/Users/23196/Desktop/记账管理/vat_shop/uni_modules/uni-datetime-picker/components/uni-datetime-picker/i18n/zh-Hans.json ***!
   \*****************************************************************************************************************************/
@@ -28756,7 +28809,7 @@ module.exports = JSON.parse("{\"uni-datetime-picker.selectDate\":\"select date\"
 module.exports = JSON.parse("{\"uni-datetime-picker.selectDate\":\"选择日期\",\"uni-datetime-picker.selectTime\":\"选择时间\",\"uni-datetime-picker.selectDateTime\":\"选择日期时间\",\"uni-datetime-picker.startDate\":\"开始日期\",\"uni-datetime-picker.endDate\":\"结束日期\",\"uni-datetime-picker.startTime\":\"开始时间\",\"uni-datetime-picker.endTime\":\"结束时间\",\"uni-datetime-picker.ok\":\"确定\",\"uni-datetime-picker.clear\":\"清除\",\"uni-datetime-picker.cancel\":\"取消\",\"uni-datetime-picker.year\":\"年\",\"uni-datetime-picker.month\":\"月\",\"uni-calender.SUN\":\"日\",\"uni-calender.MON\":\"一\",\"uni-calender.TUE\":\"二\",\"uni-calender.WED\":\"三\",\"uni-calender.THU\":\"四\",\"uni-calender.FRI\":\"五\",\"uni-calender.SAT\":\"六\",\"uni-calender.confirm\":\"确认\"}");
 
 /***/ }),
-/* 366 */
+/* 377 */
 /*!*****************************************************************************************************************************!*\
   !*** C:/Users/23196/Desktop/记账管理/vat_shop/uni_modules/uni-datetime-picker/components/uni-datetime-picker/i18n/zh-Hant.json ***!
   \*****************************************************************************************************************************/
@@ -28766,7 +28819,7 @@ module.exports = JSON.parse("{\"uni-datetime-picker.selectDate\":\"选择日期\
 module.exports = JSON.parse("{\"uni-datetime-picker.selectDate\":\"選擇日期\",\"uni-datetime-picker.selectTime\":\"選擇時間\",\"uni-datetime-picker.selectDateTime\":\"選擇日期時間\",\"uni-datetime-picker.startDate\":\"開始日期\",\"uni-datetime-picker.endDate\":\"結束日期\",\"uni-datetime-picker.startTime\":\"開始时间\",\"uni-datetime-picker.endTime\":\"結束时间\",\"uni-datetime-picker.ok\":\"確定\",\"uni-datetime-picker.clear\":\"清除\",\"uni-datetime-picker.cancel\":\"取消\",\"uni-datetime-picker.year\":\"年\",\"uni-datetime-picker.month\":\"月\",\"uni-calender.SUN\":\"日\",\"uni-calender.MON\":\"一\",\"uni-calender.TUE\":\"二\",\"uni-calender.WED\":\"三\",\"uni-calender.THU\":\"四\",\"uni-calender.FRI\":\"五\",\"uni-calender.SAT\":\"六\",\"uni-calender.confirm\":\"確認\"}");
 
 /***/ }),
-/* 367 */
+/* 378 */
 /*!*******************************************************************************************************************!*\
   !*** C:/Users/23196/Desktop/记账管理/vat_shop/uni_modules/uni-datetime-picker/components/uni-datetime-picker/util.js ***!
   \*******************************************************************************************************************/
@@ -29279,14 +29332,14 @@ function fixIosDateFormat(value) {
 }
 
 /***/ }),
-/* 368 */,
-/* 369 */,
-/* 370 */,
-/* 371 */,
-/* 372 */,
-/* 373 */,
-/* 374 */,
-/* 375 */
+/* 379 */,
+/* 380 */,
+/* 381 */,
+/* 382 */,
+/* 383 */,
+/* 384 */,
+/* 385 */,
+/* 386 */
 /*!************************************************************************************************!*\
   !*** C:/Users/23196/Desktop/记账管理/vat_shop/uni_modules/uview-ui/components/u-textarea/props.js ***!
   \************************************************************************************************/
@@ -29423,12 +29476,12 @@ exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
-/* 376 */,
-/* 377 */,
-/* 378 */,
-/* 379 */,
-/* 380 */,
-/* 381 */
+/* 387 */,
+/* 388 */,
+/* 389 */,
+/* 390 */,
+/* 391 */,
+/* 392 */
 /*!*****************************************************************************************************************************!*\
   !*** C:/Users/23196/Desktop/记账管理/vat_shop/uni_modules/uni-file-picker/components/uni-file-picker/choose-and-upload-file.js ***!
   \*****************************************************************************************************************************/
@@ -29643,7 +29696,7 @@ function chooseAndUploadFile() {
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"], __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/wx.js */ 1)["default"], __webpack_require__(/*! ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/uni-cloud/dist/index.js */ 27)["default"]))
 
 /***/ }),
-/* 382 */
+/* 393 */
 /*!************************************************************************************************************!*\
   !*** C:/Users/23196/Desktop/记账管理/vat_shop/uni_modules/uni-file-picker/components/uni-file-picker/utils.js ***!
   \************************************************************************************************************/
@@ -29806,17 +29859,6 @@ exports.get_file_data = get_file_data;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
-/* 383 */,
-/* 384 */,
-/* 385 */,
-/* 386 */,
-/* 387 */,
-/* 388 */,
-/* 389 */,
-/* 390 */,
-/* 391 */,
-/* 392 */,
-/* 393 */,
 /* 394 */,
 /* 395 */,
 /* 396 */,
@@ -29827,7 +29869,18 @@ exports.get_file_data = get_file_data;
 /* 401 */,
 /* 402 */,
 /* 403 */,
-/* 404 */
+/* 404 */,
+/* 405 */,
+/* 406 */,
+/* 407 */,
+/* 408 */,
+/* 409 */,
+/* 410 */,
+/* 411 */,
+/* 412 */,
+/* 413 */,
+/* 414 */,
+/* 415 */
 /*!****************************************************************************************************!*\
   !*** C:/Users/23196/Desktop/记账管理/vat_shop/uni_modules/uview-ui/components/u-loading-icon/props.js ***!
   \****************************************************************************************************/
@@ -29904,14 +29957,14 @@ exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
-/* 405 */,
-/* 406 */,
-/* 407 */,
-/* 408 */,
-/* 409 */,
-/* 410 */,
-/* 411 */,
-/* 412 */
+/* 416 */,
+/* 417 */,
+/* 418 */,
+/* 419 */,
+/* 420 */,
+/* 421 */,
+/* 422 */,
+/* 423 */
 /*!********************************************************************************************!*\
   !*** C:/Users/23196/Desktop/记账管理/vat_shop/uni_modules/uview-ui/components/u-icon/icons.js ***!
   \********************************************************************************************/
@@ -30142,7 +30195,7 @@ var _default = {
 exports.default = _default;
 
 /***/ }),
-/* 413 */
+/* 424 */
 /*!********************************************************************************************!*\
   !*** C:/Users/23196/Desktop/记账管理/vat_shop/uni_modules/uview-ui/components/u-icon/props.js ***!
   \********************************************************************************************/
@@ -30249,14 +30302,14 @@ exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
-/* 414 */,
-/* 415 */,
-/* 416 */,
-/* 417 */,
-/* 418 */,
-/* 419 */,
-/* 420 */,
-/* 421 */
+/* 425 */,
+/* 426 */,
+/* 427 */,
+/* 428 */,
+/* 429 */,
+/* 430 */,
+/* 431 */,
+/* 432 */
 /*!********************************************************************************************!*\
   !*** C:/Users/23196/Desktop/记账管理/vat_shop/uni_modules/uview-ui/components/u-line/props.js ***!
   \********************************************************************************************/
@@ -30307,14 +30360,14 @@ exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
-/* 422 */,
-/* 423 */,
-/* 424 */,
-/* 425 */,
-/* 426 */,
-/* 427 */,
-/* 428 */,
-/* 429 */
+/* 433 */,
+/* 434 */,
+/* 435 */,
+/* 436 */,
+/* 437 */,
+/* 438 */,
+/* 439 */,
+/* 440 */
 /*!**************************************************************************************************!*\
   !*** C:/Users/23196/Desktop/记账管理/vat_shop/uni_modules/uview-ui/components/u-transition/props.js ***!
   \**************************************************************************************************/
@@ -30356,7 +30409,7 @@ exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
-/* 430 */
+/* 441 */
 /*!*******************************************************************************************************!*\
   !*** C:/Users/23196/Desktop/记账管理/vat_shop/uni_modules/uview-ui/components/u-transition/transition.js ***!
   \*******************************************************************************************************/
@@ -30373,7 +30426,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 var _regenerator = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/regenerator */ 28));
 var _asyncToGenerator2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ 30));
-var _nvueAniMap = _interopRequireDefault(__webpack_require__(/*! ./nvue.ani-map.js */ 431));
+var _nvueAniMap = _interopRequireDefault(__webpack_require__(/*! ./nvue.ani-map.js */ 442));
 // 定义一个一定时间后自动成功的promise，让调用nextTick方法处，进入下一个then方法
 var nextTick = function nextTick() {
   return new Promise(function (resolve) {
@@ -30465,7 +30518,7 @@ var _default = {
 exports.default = _default;
 
 /***/ }),
-/* 431 */
+/* 442 */
 /*!*********************************************************************************************************!*\
   !*** C:/Users/23196/Desktop/记账管理/vat_shop/uni_modules/uview-ui/components/u-transition/nvue.ani-map.js ***!
   \*********************************************************************************************************/
@@ -30658,14 +30711,14 @@ var _default = {
 exports.default = _default;
 
 /***/ }),
-/* 432 */,
-/* 433 */,
-/* 434 */,
-/* 435 */,
-/* 436 */,
-/* 437 */,
-/* 438 */,
-/* 439 */
+/* 443 */,
+/* 444 */,
+/* 445 */,
+/* 446 */,
+/* 447 */,
+/* 448 */,
+/* 449 */,
+/* 450 */
 /*!**************************************************************************************************!*\
   !*** C:/Users/23196/Desktop/记账管理/vat_shop/uni_modules/uview-ui/components/u-status-bar/props.js ***!
   \**************************************************************************************************/
@@ -30691,14 +30744,14 @@ exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
-/* 440 */,
-/* 441 */,
-/* 442 */,
-/* 443 */,
-/* 444 */,
-/* 445 */,
-/* 446 */,
-/* 447 */
+/* 451 */,
+/* 452 */,
+/* 453 */,
+/* 454 */,
+/* 455 */,
+/* 456 */,
+/* 457 */,
+/* 458 */
 /*!**********************************************************************************************!*\
   !*** C:/Users/23196/Desktop/记账管理/vat_shop/uni_modules/uview-ui/libs/util/async-validator.js ***!
   \**********************************************************************************************/
@@ -31879,10 +31932,10 @@ Schema.warning = warning;
 Schema.messages = messages;
 var _default = Schema; // # sourceMappingURL=index.js.map
 exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/node-libs-browser/mock/process.js */ 448)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/node-libs-browser/mock/process.js */ 459)))
 
 /***/ }),
-/* 448 */
+/* 459 */
 /*!********************************************************!*\
   !*** ./node_modules/node-libs-browser/mock/process.js ***!
   \********************************************************/
@@ -31913,7 +31966,7 @@ exports.binding = function (name) {
     var path;
     exports.cwd = function () { return cwd };
     exports.chdir = function (dir) {
-        if (!path) path = __webpack_require__(/*! path */ 449);
+        if (!path) path = __webpack_require__(/*! path */ 460);
         cwd = path.resolve(dir, cwd);
     };
 })();
@@ -31926,7 +31979,7 @@ exports.features = {};
 
 
 /***/ }),
-/* 449 */
+/* 460 */
 /*!***********************************************!*\
   !*** ./node_modules/path-browserify/index.js ***!
   \***********************************************/
@@ -32236,7 +32289,7 @@ var substr = 'ab'.substr(-1) === 'b'
     }
 ;
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../node-libs-browser/mock/process.js */ 448)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../node-libs-browser/mock/process.js */ 459)))
 
 /***/ })
 ]]);

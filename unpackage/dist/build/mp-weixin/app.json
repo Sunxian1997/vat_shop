@@ -8,7 +8,9 @@
     "pages/tabbar-3-detial/tabbar-3-release/tabbar-3-release",
     "pages/tabbar-3-detial/tabbar-3-video/tabbar-3-video",
     "pages/tabbar-3-detial/tabbar-3-qa/tabbar-3-qa",
-    "pages/commodity/add/index"
+    "pages/commodity/add/index",
+    "pages/commodity/detail/detail",
+    "pages/commodity/edit/edit"
   ],
   "subPackages": [],
   "window": {

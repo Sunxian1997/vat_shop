@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "u-modal": "/uni_modules/uview-ui/components/u-modal/u-modal",
+    "uni-fab": "/uni_modules/uni-fab/components/uni-fab/uni-fab",
+    "u-notify": "/uni_modules/uview-ui/components/u-notify/u-notify"
+  }
+}

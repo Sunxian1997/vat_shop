@@ -102,16 +102,16 @@ var components
 try {
   components = {
     uButton: function () {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-button/u-button */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-button/u-button")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-button/u-button.vue */ 287))
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-button/u-button */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-button/u-button")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-button/u-button.vue */ 298))
     },
     vipCard: function () {
       return Promise.resolve(/*! import() */).then(__webpack_require__.bind(null, /*! @/components/vipCard/vipCard.vue */ 212))
     },
     uCellGroup: function () {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-cell-group/u-cell-group */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-cell-group/u-cell-group")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-cell-group/u-cell-group.vue */ 297))
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-cell-group/u-cell-group */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-cell-group/u-cell-group")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-cell-group/u-cell-group.vue */ 308))
     },
     uCell: function () {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-cell/u-cell */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-cell/u-cell")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-cell/u-cell.vue */ 305))
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-cell/u-cell */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-cell/u-cell")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-cell/u-cell.vue */ 316))
     },
   }
 } catch (e) {
@@ -340,7 +340,7 @@ var components
 try {
   components = {
     uLineProgress: function () {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-line-progress/u-line-progress */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-line-progress/u-line-progress")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-line-progress/u-line-progress.vue */ 313))
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-line-progress/u-line-progress */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-line-progress/u-line-progress")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-line-progress/u-line-progress.vue */ 324))
     },
   }
 } catch (e) {

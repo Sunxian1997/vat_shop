@@ -44,6 +44,7 @@
 					textAlign: 'left'
 				}"
 				arrow-direction="right"
+				url="/pages/tabbar/tabbar-5/problemFeedback/problemFeedback"
 			></u-cell>
 		</u-cell-group>
 	</view>
@@ -62,12 +63,21 @@ export default {
 	onLoad() {},
 	methods: {
 		loginUser() {
-			uni.getUserInfo({
-				desc: '登录后可同步数据',
-				lang: 'zh_CN',
-				success: res => {
-					console.log('getUserProfile', res);
-				}
+			uni.login({
+			    provider: 'weixin',
+			    success: function (loginRes) {
+			        // 登录成功
+			        uni.getUserInfo({
+			            provider: 'weixin',
+			            success: function(info) {
+			                // 获取用户信息成功, info.authResult保存用户信息
+			            }
+			        })
+			    },
+			    fail: function (err) {
+			        // 登录授权失败  
+			        // err.code是错误码
+			    }
 			});
 		}
 	}
