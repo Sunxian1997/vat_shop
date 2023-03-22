@@ -96,17 +96,14 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {
+/* WEBPACK VAR INJECTION */(function(uni, uniCloud) {
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
 var _default = {
-  globalData: {
-    appid: 'wx786043dff39fa0cd',
-    secret: '791fb139c031c4189d8dac3e333a2f8d'
-  },
+  globalData: {},
   onLaunch: function onLaunch() {
     console.log('App Launch');
     setTimeout(function () {
@@ -121,13 +118,24 @@ var _default = {
   },
   onShow: function onShow() {
     console.log('App Show');
+    this.getWeChatApplet();
   },
   onHide: function onHide() {
     console.log('App Hide');
+  },
+  methods: {
+    getWeChatApplet: function getWeChatApplet() {
+      uniCloud.callFunction({
+        name: "getWeChatApplet"
+      }).then(function (res) {
+        getApp().globalData.appid = res.result[0].appid;
+        getApp().globalData.secret = res.result[0].secret;
+      });
+    }
   }
 };
 exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"], __webpack_require__(/*! ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/uni-cloud/dist/index.js */ 27)["default"]))
 
 /***/ }),
 

@@ -1,8 +1,7 @@
 <script>
 export default {
 	globalData: {
-		appid: 'wx786043dff39fa0cd',
-		secret: '791fb139c031c4189d8dac3e333a2f8d'
+		
 	},
 	onLaunch: function() {
 		console.log('App Launch');
@@ -19,9 +18,20 @@ export default {
 	},
 	onShow: function() {
 		console.log('App Show');
-	},
+		this.getWeChatApplet()
+	}, 
 	onHide: function() {
 		console.log('App Hide');
+	},
+	methods:{
+		getWeChatApplet(){
+			uniCloud.callFunction({
+				name:"getWeChatApplet"
+			}).then(res=>{
+				getApp().globalData.appid = res.result[0].appid
+				getApp().globalData.secret = res.result[0].secret
+			})
+		}
 	}
 };
 </script>
