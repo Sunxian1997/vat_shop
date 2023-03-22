@@ -2,7 +2,8 @@
 	<view class="box">
 		<u-sticky>
 			<view class="search-box">
-				<u-input clearable shape="circle" clearable prefixIcon="search" placeholder="请输入要查询的内容" border="surround" v-model="searchKey" @change="change">
+				<u-input
+				 clearable shape="circle" clearable prefixIcon="search" placeholder="请输入要查询的内容" border="surround" v-model="searchKey" @change="change">
 					<template slot="suffix">
 						<uni-icons @click="scanningCode" type="scan" size="18"></uni-icons>
 					</template>

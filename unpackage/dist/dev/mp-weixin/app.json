@@ -11,7 +11,10 @@
     "pages/commodity/add/index",
     "pages/commodity/detail/detail",
     "pages/commodity/edit/edit",
-    "pages/tabbar/tabbar-5/problemFeedback/problemFeedback"
+    "pages/tabbar/tabbar-5/problemFeedback/problemFeedback",
+    "pages/tabbar/tabbar-5/setting/setting",
+    "pages/tabbar/tabbar-5/userDetail/userDetail",
+    "pages/tabbar/tabbar-5/userDetail/editUserInfo/editUserInfo"
   ],
   "subPackages": [],
   "window": {

@@ -91,21 +91,86 @@
   align-items: center;
   margin-bottom: 60rpx;
 }
-.box .card .left.data-v-6ca01612 {
+.box .card .wei-xin-box.data-v-6ca01612 {
   display: flex;
   flex: 1;
   align-items: center;
 }
-.box .card .left image.data-v-6ca01612 {
+.box .card .wei-xin-box .icon-nickname.data-v-6ca01612 {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+.box .card .wei-xin-box .icon-nickname .left ._img.data-v-6ca01612 {
   width: 120rpx;
   height: 120rpx;
   border-radius: 60rpx;
   margin-right: 20rpx;
+}
+.box .card .wei-xin-box .icon-nickname .right .nickname-top.data-v-6ca01612 {
+  font-size: 36rpx;
+  margin-bottom: 10rpx;
+}
+.box .card .wei-xin-box .icon-nickname .right .wei-xin-number.data-v-6ca01612 {
+  color: #3c3c3c;
 }
 .box .card .right.data-v-6ca01612 {
   width: 200rpx;
 }
 .box .vipCard.data-v-6ca01612 {
   margin-bottom: 40rpx;
+}
+.box .user-info.data-v-6ca01612 {
+  padding: 20rpx;
+  background-color: #ffffff;
+}
+.box .user-info .brief-introduction.data-v-6ca01612 {
+  font-size: 32rpx;
+  color: #333333;
+  margin-bottom: 20rpx;
+}
+.box .user-info .base-info.data-v-6ca01612 {
+  padding: 20rpx 0rpx;
+  display: flex;
+}
+.box .user-info .base-info .left ._img.data-v-6ca01612 {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 20rpx;
+  margin-right: 30rpx;
+}
+.box .user-info .base-info .right.data-v-6ca01612 {
+  flex: 1;
+  position: relative;
+}
+.box .user-info .base-info .right .nickname-top.data-v-6ca01612 {
+  font-size: 40rpx;
+  color: #333333;
+  position: absolute;
+  top: 0;
+}
+.box .user-info .base-info .right .introduction-bottom.data-v-6ca01612 {
+  font-size: 32rpx;
+  color: #3c3c3c;
+  position: absolute;
+  bottom: 0;
+}
+.box .user-info .base-info .right .checkbox-mark-center.data-v-6ca01612 {
+  position: absolute;
+  right: 20rpx;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+.box .user-info .footer.data-v-6ca01612 {
+  display: flex;
+  padding-top: 40rpx;
+}
+.box .user-info .footer .pecrmitLogin.data-v-6ca01612,
+.box .user-info .footer .cancle.data-v-6ca01612 {
+  flex: 1;
+  width: auto;
+  padding: 0rpx 60rpx;
 }
 

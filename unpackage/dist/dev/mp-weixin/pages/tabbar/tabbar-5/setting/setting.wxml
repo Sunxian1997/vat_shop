@@ -1,0 +1,1 @@
+<view class="setting-box data-v-6ac85eb0"><view class="footer data-v-6ac85eb0"><u-button vue-id="23780f54-1" text="退出登录" data-event-opts="{{[['^click',[['loginOut']]]]}}" bind:click="__e" class="data-v-6ac85eb0" bind:__l="__l"></u-button></view></view>
