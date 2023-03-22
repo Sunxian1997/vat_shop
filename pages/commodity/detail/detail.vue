@@ -6,6 +6,10 @@
 				<text class="value">{{ detailForm.name }}</text>
 			</view>
 			<view class="grid-item">
+				<text class="title">商品编码：</text>
+				<text class="value">{{ detailForm.commodityCode }}</text>
+			</view>
+			<view class="grid-item">
 				<text class="title">价格：</text>
 				<text class="value">¥ {{ formaatMoney(detailForm.price) }}</text>
 			</view>
@@ -25,9 +29,9 @@
 		<view class="file-box">
 			<view class="file-item" v-for="(item, index) in detailForm.picUrls" :key="index"><image draggable :src="item" mode="scaleToFill"></image></view>
 		</view>
-		<u-modal :show="isShowModal" @confirm="modalConfirm" title="删除商品" showCancelButton @cancel="modalCancle">
+		<!-- <u-modal :show="isShowModal" @confirm="modalConfirm" title="删除商品" showCancelButton @cancel="modalCancle">
 			<view class="" v-slot="content">删除后不可恢复，是否确认删除？</view>
-		</u-modal>
+		</u-modal> -->
 		<uni-fab ref="fab" :pattern="uniFabParent.pattern" :content="uniFabParent.content" horizontal="right" vertical="bottom" @trigger="trigger" />
 		<u-notify ref="uNotify"></u-notify>
 	</view>

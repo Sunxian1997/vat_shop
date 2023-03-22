@@ -1,4 +1,5 @@
 {
+	// 此为本身已有的内容
 	"pages": [
 		//pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
@@ -22,7 +23,10 @@
 		},
 		{
 			"path": "pages/tabbar/tabbar-5/tabbar-5",
-			"style": {}
+			"style": {
+				"navigationBarTitleText": "个人信息",
+				"navigationBarBackgroundColor": "#f7e4e8"
+			}
 		},
 		{
 			"path": "pages/tabbar-3-detial/tabbar-3-release/tabbar-3-release",
@@ -42,35 +46,29 @@
 				"navigationBarTitleText": "新增商品",
 				"navigationBarBackgroundColor": "#f7e4e8"
 			}
+		}, {
+			"path": "pages/commodity/detail/detail",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/commodity/edit/edit",
+			"style": {
+				"navigationBarTitleText": "编辑商品",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/tabbar/tabbar-5/problemFeedback/problemFeedback",
+			"style": {
+				"navigationBarTitleText": "问题反馈",
+				"enablePullDownRefresh": false
+			}
+
 		}
-	    ,{
-            "path" : "pages/commodity/detail/detail",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/commodity/edit/edit",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "编辑商品",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/tabbar/tabbar-5/problemFeedback/problemFeedback",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "问题反馈",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-    ],
+	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",

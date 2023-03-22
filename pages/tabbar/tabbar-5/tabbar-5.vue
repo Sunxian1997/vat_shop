@@ -1,11 +1,11 @@
 <template>
 	<view class="box">
-		<view class="card">
+		<view class="card"> 
 			<view class="left">
 				<image src="@/static/img/pretty/boy.jpg" mode="aspectFill"></image>
 				<text class="number">18055084483</text>
-			</view>
-			<view class="right"><u-button class="custom-style" text="点击登录" @click="loginUser"></u-button></view>
+			</view> 
+			<view class="right"><u-button class="custom-style" text="点击登录" @click="getUserInfo"></u-button></view>
 		</view>
 		<view class="vipCard"><vipCard></vipCard></view>
 		<u-cell-group>
@@ -47,10 +47,12 @@
 				url="/pages/tabbar/tabbar-5/problemFeedback/problemFeedback"
 			></u-cell>
 		</u-cell-group>
+		<u-toast ref="uToast"></u-toast>
 	</view>
 </template>
 
 <script>
+import { mapState } from 'vuex';
 export default {
 	components: {
 		vipCard: () => import('@/components/vipCard/vipCard.vue')
@@ -60,24 +62,62 @@ export default {
 			title: 'Hello'
 		};
 	},
-	onLoad() {},
+	onLoad() {
+		// this.checkLogin();
+		console.log('this.$store--', this.$store.state);
+	},
+	computed: {
+		...mapState(['login'])
+	},
 	methods: {
-		loginUser() {
-			uni.login({
-			    provider: 'weixin',
-			    success: function (loginRes) {
-			        // 登录成功
-			        uni.getUserInfo({
-			            provider: 'weixin',
-			            success: function(info) {
-			                // 获取用户信息成功, info.authResult保存用户信息
-			            }
-			        })
-			    },
-			    fail: function (err) {
-			        // 登录授权失败  
-			        // err.code是错误码
-			    }
+		checkLogin() {
+			if (!this.$store.state.login) {
+				uni.navigateTo({
+					url: '../login/login'
+				});
+			}
+		},
+		getUserInfo() {
+			const _this = this;
+			uni.getUserProfile({
+				desc: '用于完善会员资料',
+				success: result => {
+					_this.userInfo = result.userInfo;
+					_this.wxLogin();
+				},
+				fail: () => {
+					uni.hideLoading();
+					uni.showModal({ content: '获取用户信息失败', showCancel: false });
+				}
+			});
+		},
+		wxLogin() {
+			const _this = this;
+			uni.showLoading({ title: '加载中' });
+
+			uni.login({  
+				provider: 'weixin', 
+				success: res => {
+					// 获取 code 
+					if (res.code) { 
+						uniCloud.callFunction({
+							name: 'user',
+							data: { action: 'code2Session', js_code: res.code, user_info: _this.userInfo },
+							success: res => {
+								console.log('云函数返回的值：：：：', res.result);
+								uni.hideLoading();
+								if (res.result.result.result._id) {
+									uni.setStorageSync('userInfo', JSON.stringify(res.result.result.result));
+									globalData.$UserInfo = res.result.result.result;
+								}
+							},
+							fail: () => {
+								uni.hideLoading();
+								console.log('云函数调用失败');
+							}
+						});
+					}
+				}
 			});
 		}
 	}

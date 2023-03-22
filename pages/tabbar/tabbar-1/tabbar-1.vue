@@ -2,11 +2,11 @@
 	<view class="box">
 		<u-sticky>
 			<view class="search-box">
-				<u--input shape="circle" clearable prefixIcon="search" placeholder="请输入要查询的内容" border="surround" v-model="searchKey" @change="change">
+				<u-input clearable shape="circle" clearable prefixIcon="search" placeholder="请输入要查询的内容" border="surround" v-model="searchKey" @change="change">
 					<template slot="suffix">
 						<uni-icons @click="scanningCode" type="scan" size="18"></uni-icons>
 					</template>
-				</u--input>
+				</u-input>
 				<text class="btn-search" @click="searchList">搜索</text>
 			</view>
 		</u-sticky>
@@ -17,9 +17,11 @@
 </template>
 
 <script>
+import commodityCard from '@/components/commodityCard/index.vue';
 export default {
 	components: {
-		commodityCard: () => import('@/components/commodityCard/index.vue')
+		commodityCard
+		// commodityCard: () => import('@/components/commodityCard/index.vue') 小程序此方法引用转换时会导致组件无法显示
 	},
 	data() {
 		return {
@@ -35,10 +37,9 @@ export default {
 		// 调用扫码查询
 		scanningCode() {
 			uni.scanCode({
-				success: function(res) {
-					console.log('条码类型：' + res.scanType);
-					console.log('条码内容：' + res.result);
-					alert(res)
+				success: res => {
+					const { result } = res;
+					this.searchKey = result;
 				}
 			});
 		},
@@ -56,7 +57,7 @@ export default {
 				.callFunction({
 					name: 'getCommodityList',
 					data: {
-						name: this.searchKey
+						searchKey: this.searchKey
 					}
 				})
 				.then(res => {
@@ -75,7 +76,7 @@ export default {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		background: #fff;
+		// background: #fff;
 
 		text {
 			margin-left: 20rpx;

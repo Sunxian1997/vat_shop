@@ -7,7 +7,7 @@
 			<view class="commodity-name">{{cardInfo.name}}</view>
 			<view>¥ {{formaatMoney(cardInfo.price)}}</view>
 			<uni-dateformat :date="cardInfo.posttime" :threshold="[60000, 3600000]" format="MM-dd"></uni-dateformat>
-		</view> 
+		</view>
 	</view>
 </template>
 

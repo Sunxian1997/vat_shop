@@ -1,14 +1,13 @@
 <template>
 	<view class="container">
-		<map name=""></map>
 		<view class="quick-contact-information">
 			<view class="box">
 				<u-icon name="chat" size="32" color="green"></u-icon>
 				<text class="phone">_yiHan2022</text>
 			</view>
-			<view class="box">
+			<view class="box" @click="callPhone">
 				<u-icon name="phone" size="32" color="green"></u-icon>
-				<a class="phone" href="tel:18055084483">18055084483</a>
+				<a class="phone callPhone">{{`18055084483`.replace(/^(\d{3})(\d{4})/g, '$1 $2 ')}}</a>
 			</view>
 		</view>
 		<view class="grid-problemFeedback">
@@ -18,9 +17,7 @@
 			</view>
 			<view class="grid-item">
 				<text class="title">联系方式：</text>
-				<view class="value"><u--input
-				 maxlength="11"
-				 placeholder="请输入联系方式" border="surround" v-model="formData.feedbackPersonPhone"></u--input></view>
+				<view class="value"><u--input maxlength="11" placeholder="请输入联系方式" border="surround" v-model="formData.feedbackPersonPhone"></u--input></view>
 			</view>
 			<view class="grid-item">
 				<text class="title">详细说明：</text>
@@ -45,6 +42,25 @@ export default {
 		};
 	},
 	methods: {
+		callPhone() {
+			wx.makePhoneCall({
+				phoneNumber: '18055084483',
+				success: function() {
+					this.$refs.uToast.show({
+						title: '拨打电话成功',
+						type: 'success',
+						position: 'top'
+					});
+				},
+				fail: function() {
+					this.$refs.uToast.show({
+						title: '拨打电话失败',
+						type: 'error',
+						position: 'top'
+					});
+				}
+			});
+		},
 		submit() {
 			this.$refs.uForm.validate(valid => {
 				if (valid) {
@@ -141,6 +157,8 @@ export default {
 				font-size: 32rpx;
 				margin-left: 12rpx;
 			}
+			.callPhone {
+			}
 		}
 	}
 	.grid-problemFeedback {
@@ -151,6 +169,7 @@ export default {
 			width: 100%;
 			margin-bottom: 40rpx;
 			display: flex;
+			font-size: 32rpx;
 			.title {
 				width: 180rpx;
 				margin-left: 12rpx;

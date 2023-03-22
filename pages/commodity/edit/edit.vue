@@ -6,6 +6,13 @@
 				<u-form-item label="名称" prop="baseInfo.name" borderBottom>
 					<u--input placeholder="请输入名称" border="surround" v-model="formData.baseInfo.name"></u--input>
 				</u-form-item>
+				<u-form-item label="商品编码" prop="baseInfo.commodityCode" borderBottom>
+					<u-input placeholder="请输入商品编码" border="surround" v-model="formData.baseInfo.commodityCode">
+						<template slot="suffix">
+							<uni-icons @click="scanningCode" type="scan" size="18"></uni-icons>
+						</template>
+					</u-input>
+				</u-form-item>
 				<u-form-item label="价格" prop="baseInfo.price" borderBottom>
 					<u--input type="digit" placeholder="请输入价格" border="surround" v-model="formData.baseInfo.price"></u--input>
 				</u-form-item>
@@ -24,6 +31,7 @@
 			<view class="file-box"><uni-file-picker v-model="tempPicUrls" fileMediatype="image" mode="grid" @success="success" /></view>
 		</uni-card>
 		<uni-fab ref="fab" :pattern="pattern" :content="content" horizontal="right" vertical="bottom" @trigger="trigger" />
+		<u-toast ref="uToast"></u-toast>
 	</view>
 </template>
 
@@ -57,7 +65,8 @@ export default {
 			formData: {
 				baseInfo: {
 					remark: '',
-					qualityGuaranteePeriod: ''
+					qualityGuaranteePeriod: '',
+					commodityCode: ''
 				}
 			},
 			rules: {
@@ -65,6 +74,12 @@ export default {
 					type: 'string',
 					required: true,
 					message: '请填写商品名称',
+					trigger: ['blur', 'change']
+				},
+				'baseInfo.commodityCode': {
+					type: 'string',
+					required: true,
+					message: '请填写商品代码',
 					trigger: ['blur', 'change']
 				},
 				'baseInfo.price': {
@@ -111,21 +126,16 @@ export default {
 							...this.formData.baseInfo,
 							picUrls: this.picUrls
 						};
-						 console.log('params---',params) 
+						console.log('params---', params);
 						uniCloud
 							.callFunction({
 								name: 'uploadCommodity',
 								data: params
-							}) 
+							})
 							.then(res => {
-								this.$refs.uNotify.show({
-									top: 0,
-									type: 'success',
-									color: '#fff',
+								this.$refs.uToast.show({
 									message: '更新商品成功',
-									duration: 1000 * 2,
-									fontSize: 20,
-									safeAreaInsetTop: true
+									type: 'success'
 								});
 								setTimeout(() => {
 									uni.reLaunch({
@@ -144,7 +154,16 @@ export default {
 			const { tempFiles, tempFilePaths } = e;
 			this.picUrls = tempFilePaths;
 		},
- 
+
+		// 调用扫码查询
+		scanningCode() {
+			uni.scanCode({
+				success: res => {
+					const { result } = res;
+					this.formData.baseInfo.commodityCode = result;
+				}
+			});
+		},
 		getDetail(id) {
 			uniCloud
 				.callFunction({
@@ -156,7 +175,7 @@ export default {
 				.then(res => {
 					console.log('获取商品详情---', res);
 					this.formData.baseInfo = res.result[0];
-					this.tempPicUrls = res.result[0].picUrls.map((item,index) => {
+					this.tempPicUrls = res.result[0].picUrls.map((item, index) => {
 						return {
 							name: `图片-${index}`,
 							extname: 'png',

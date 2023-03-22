@@ -15,6 +15,7 @@ var _defineProperty2 = _interopRequireDefault(__webpack_require__(/*! @babel/run
 __webpack_require__(/*! uni-pages */ 26);
 __webpack_require__(/*! @dcloudio/vue-cli-plugin-uni/packages/uni-cloud/dist/index.js */ 27);
 var _App = _interopRequireDefault(__webpack_require__(/*! ./App.vue */ 39));
+var _store = _interopRequireDefault(__webpack_require__(/*! ./store */ 578));
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 25));
 var _uviewUi = _interopRequireDefault(__webpack_require__(/*! @/uni_modules/uview-ui */ 45));
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
@@ -24,6 +25,7 @@ wx.__webpack_require_UNI_MP_PLUGIN__ = __webpack_require__;
 _vue.default.use(_uviewUi.default);
 _vue.default.config.productionTip = false;
 _App.default.mpType = 'app';
+_vue.default.prototype.$store = _store.default;
 var app = new _vue.default(_objectSpread({}, _App.default));
 createApp(app).$mount();
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/wx.js */ 1)["default"], __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["createApp"]))
@@ -101,6 +103,10 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 var _default = {
+  globalData: {
+    appid: 'wx786043dff39fa0cd',
+    secret: '791fb139c031c4189d8dac3e333a2f8d'
+  },
   onLaunch: function onLaunch() {
     console.log('App Launch');
     setTimeout(function () {

@@ -10,7 +10,8 @@
     "pages/tabbar-3-detial/tabbar-3-qa/tabbar-3-qa",
     "pages/commodity/add/index",
     "pages/commodity/detail/detail",
-    "pages/commodity/edit/edit"
+    "pages/commodity/edit/edit",
+    "pages/tabbar/tabbar-5/problemFeedback/problemFeedback"
   ],
   "subPackages": [],
   "window": {
