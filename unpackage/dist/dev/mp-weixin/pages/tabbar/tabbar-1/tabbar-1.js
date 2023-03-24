@@ -110,6 +110,15 @@ try {
     uniIcons: function () {
       return Promise.all(/*! import() | uni_modules/uni-icons/components/uni-icons/uni-icons */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-icons/components/uni-icons/uni-icons")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-icons/components/uni-icons/uni-icons.vue */ 313))
     },
+    uSwipeAction: function () {
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-swipe-action/u-swipe-action */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-swipe-action/u-swipe-action")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-swipe-action/u-swipe-action.vue */ 321))
+    },
+    uSwipeActionItem: function () {
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-swipe-action-item/u-swipe-action-item */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-swipe-action-item/u-swipe-action-item")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-swipe-action-item/u-swipe-action-item.vue */ 327))
+    },
+    uToast: function () {
+      return __webpack_require__.e(/*! import() | uni_modules/uview-ui/components/u-toast/u-toast */ "uni_modules/uview-ui/components/u-toast/u-toast").then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-toast/u-toast.vue */ 339))
+    },
   }
 } catch (e) {
   if (
@@ -165,18 +174,24 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni, uniCloud) {
+/* WEBPACK VAR INJECTION */(function(uniCloud, uni) {
 
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ 4);
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
+var _defineProperty2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/defineProperty */ 11));
+var _vuex = __webpack_require__(/*! vuex */ 46);
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { (0, _defineProperty2.default)(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 var commodityCard = function commodityCard() {
   __webpack_require__.e(/*! require.ensure | components/commodityCard/index */ "components/commodityCard/index").then((function () {
-    return resolve(__webpack_require__(/*! @/components/commodityCard/index.vue */ 321));
+    return resolve(__webpack_require__(/*! @/components/commodityCard/index.vue */ 346));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var _default = {
+  computed: _objectSpread({}, (0, _vuex.mapState)(['login', 'avatarUrl', 'nickName', 'unionId', 'openid'])),
   components: {
     commodityCard: commodityCard
     // commodityCard: () => import('@/components/commodityCard/index.vue') 小程序此方法引用转换时会导致组件无法显示
@@ -184,7 +199,21 @@ var _default = {
   data: function data() {
     return {
       searchKey: '',
-      commodityData: []
+      commodityData: [],
+      optionStyle: {
+        backgroundColor: '#3c9cff'
+      },
+      swipeActionItemOptions: [{
+        text: '收藏',
+        style: {
+          backgroundColor: '#3c9cff'
+        }
+      }, {
+        text: '删除',
+        style: {
+          backgroundColor: '#f56c6c'
+        }
+      }]
     };
   },
   onLoad: function onLoad() {
@@ -192,6 +221,31 @@ var _default = {
   },
   methods: {
     change: function change() {},
+    // 滑动卡片按钮点击事件
+    oprationHandler: function oprationHandler(props) {
+      // name: props参数name的值，index: 第几个按钮被点击
+      var name = props.name,
+        index = props.index;
+      console.log('name---', name);
+      console.log('index---', index);
+      // 先判断用户是否登录 
+      // if (!this.login)
+      // 	return this.$refs.uToast.show({
+      // 		type: 'error',
+      // 		message: '请先登录再收藏',
+      // 		position: 'top'
+      // 	});
+      // 执行更新商品信息
+      uniCloud.callFunction({
+        name: 'uploadCommodity',
+        data: {
+          opration: 'collect',
+          openid: this.openid
+        }
+      }).then(function (res) {
+        console.log('收藏商品返回的信息---', res);
+      });
+    },
     // 调用扫码查询
     scanningCode: function scanningCode() {
       var _this = this;
@@ -225,7 +279,7 @@ var _default = {
   }
 };
 exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"], __webpack_require__(/*! ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/uni-cloud/dist/index.js */ 27)["default"]))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/uni-cloud/dist/index.js */ 27)["default"], __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
 

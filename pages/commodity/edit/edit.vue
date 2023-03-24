@@ -7,7 +7,7 @@
 					<u--input placeholder="请输入名称" border="surround" v-model="formData.baseInfo.name"></u--input>
 				</u-form-item>
 				<u-form-item label="商品编码" prop="baseInfo.commodityCode" borderBottom>
-					<u-input placeholder="请输入商品编码" border="surround" v-model="formData.baseInfo.commodityCode">
+					<u-input disabled placeholder="请输入商品编码" border="surround" v-model="formData.baseInfo.commodityCode">
 						<template slot="suffix">
 							<uni-icons @click="scanningCode" type="scan" size="18"></uni-icons>
 						</template>

@@ -34,7 +34,7 @@
 		</u-modal> -->
 		<uni-fab ref="fab" :pattern="uniFabParent.pattern" :content="uniFabParent.content" horizontal="right" vertical="bottom" @trigger="trigger" />
 		<u-notify ref="uNotify"></u-notify>
-	</view>
+	</view> 
 </template>
 
 <script>
