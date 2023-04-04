@@ -36,6 +36,7 @@
 </template>
 
 <script>
+	import { mapState } from 'vuex';
 export default {
 	data() {
 		return {
@@ -106,6 +107,10 @@ export default {
 	onReady() {
 		this.$refs.formComponent.setRules(this.rules);
 	},
+	
+	computed: {
+		...mapState(['login', 'openid'])
+	},
 	methods: {
 		trigger(e) {
 			const { index } = e;
@@ -121,7 +126,8 @@ export default {
 					.then(res => {
 						const params = {
 							...this.formData.baseInfo,
-							picUrls: this.picUrls
+							picUrls: this.picUrls,
+							favoriteList:['oWkaR5Ys-lHhrFGOWt2EgwiOaRs0']
 						};
 						uniCloud
 							.callFunction({

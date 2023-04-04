@@ -27,6 +27,19 @@
 .detail-box.data-v-dc1150f8 {
   padding: 20rpx;
 }
+.detail-box .popup-box.data-v-dc1150f8 {
+  padding: 20rpx;
+}
+.detail-box .popup-box .title.data-v-dc1150f8 {
+  text-align: center;
+  font-weight: 600;
+  color: #3c3c3c;
+  margin-bottom: 20rpx;
+}
+.detail-box .popup-box .footer.data-v-dc1150f8 {
+  display: flex;
+  margin-top: 20rpx;
+}
 .detail-box .gird.data-v-dc1150f8 {
   display: flex;
   align-items: center;

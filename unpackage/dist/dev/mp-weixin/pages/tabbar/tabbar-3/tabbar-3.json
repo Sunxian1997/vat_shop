@@ -1,3 +1,9 @@
 {
-  "usingComponents": {}
+  "navigationBarTitleText": "发布商品",
+  "navigationBarBackgroundColor": "#f7e4e8",
+  "usingComponents": {
+    "u-empty": "/uni_modules/uview-ui/components/u-empty/u-empty",
+    "u-button": "/uni_modules/uview-ui/components/u-button/u-button",
+    "u-toast": "/uni_modules/uview-ui/components/u-toast/u-toast"
+  }
 }

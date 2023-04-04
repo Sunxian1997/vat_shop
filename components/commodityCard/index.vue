@@ -6,7 +6,7 @@
 			<view>¥ {{ formaatMoney(cardInfo.price) }}</view>
 			<view class="commodity-date-collect">
 				<uni-dateformat :date="cardInfo.posttime" :threshold="[60000, 3600000]" format="MM-dd"></uni-dateformat>
-				<view class="collect">收藏数：{{cardInfo.collect||'--'}}</view>
+				<view class="collect">收藏数：{{cardInfo.favoriteList.length||'--'}}</view>
 			</view>
 		</view>
 	</view>

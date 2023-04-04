@@ -102,22 +102,22 @@ var components
 try {
   components = {
     uSticky: function () {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-sticky/u-sticky */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-sticky/u-sticky")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-sticky/u-sticky.vue */ 297))
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-sticky/u-sticky */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-sticky/u-sticky")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-sticky/u-sticky.vue */ 273))
     },
     uInput: function () {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-input/u-input */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-input/u-input")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-input/u-input.vue */ 305))
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-input/u-input */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-input/u-input")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-input/u-input.vue */ 281))
     },
     uniIcons: function () {
-      return Promise.all(/*! import() | uni_modules/uni-icons/components/uni-icons/uni-icons */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-icons/components/uni-icons/uni-icons")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-icons/components/uni-icons/uni-icons.vue */ 313))
+      return Promise.all(/*! import() | uni_modules/uni-icons/components/uni-icons/uni-icons */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-icons/components/uni-icons/uni-icons")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-icons/components/uni-icons/uni-icons.vue */ 289))
     },
     uSwipeAction: function () {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-swipe-action/u-swipe-action */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-swipe-action/u-swipe-action")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-swipe-action/u-swipe-action.vue */ 321))
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-swipe-action/u-swipe-action */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-swipe-action/u-swipe-action")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-swipe-action/u-swipe-action.vue */ 297))
     },
     uSwipeActionItem: function () {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-swipe-action-item/u-swipe-action-item */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-swipe-action-item/u-swipe-action-item")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-swipe-action-item/u-swipe-action-item.vue */ 327))
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-swipe-action-item/u-swipe-action-item */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-swipe-action-item/u-swipe-action-item")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-swipe-action-item/u-swipe-action-item.vue */ 303))
     },
     uToast: function () {
-      return __webpack_require__.e(/*! import() | uni_modules/uview-ui/components/u-toast/u-toast */ "uni_modules/uview-ui/components/u-toast/u-toast").then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-toast/u-toast.vue */ 339))
+      return __webpack_require__.e(/*! import() | uni_modules/uview-ui/components/u-toast/u-toast */ "uni_modules/uview-ui/components/u-toast/u-toast").then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-toast/u-toast.vue */ 315))
     },
   }
 } catch (e) {
@@ -141,6 +141,37 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
+  var l0 = _vm.__map(_vm.commodityData, function (item, __i0__) {
+    var $orig = _vm.__get_orig(item)
+    var m0 = _vm.isFavorite(item.favoriteList)
+    var m1 = _vm.isFavorite(item.favoriteList)
+    return {
+      $orig: $orig,
+      m0: m0,
+      m1: m1,
+    }
+  })
+  if (!_vm._isMounted) {
+    _vm.e0 = function (props, item) {
+      var args = [],
+        len = arguments.length - 2
+      while (len-- > 0) args[len] = arguments[len + 2]
+
+      var _temp = args[args.length - 1].currentTarget.dataset,
+        _temp2 = _temp.eventParams || _temp["event-params"],
+        item = _temp2.item
+      var _temp, _temp2
+      return _vm.oprationHandler(props, item)
+    }
+  }
+  _vm.$mp.data = Object.assign(
+    {},
+    {
+      $root: {
+        l0: l0,
+      },
+    }
+  )
 }
 var recyclableRender = false
 var staticRenderFns = []
@@ -187,7 +218,7 @@ function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (O
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { (0, _defineProperty2.default)(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 var commodityCard = function commodityCard() {
   __webpack_require__.e(/*! require.ensure | components/commodityCard/index */ "components/commodityCard/index").then((function () {
-    return resolve(__webpack_require__(/*! @/components/commodityCard/index.vue */ 346));
+    return resolve(__webpack_require__(/*! @/components/commodityCard/index.vue */ 322));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var _default = {
@@ -200,18 +231,16 @@ var _default = {
     return {
       searchKey: '',
       commodityData: [],
-      optionStyle: {
-        backgroundColor: '#3c9cff'
-      },
-      swipeActionItemOptions: [{
-        text: '收藏',
+      isfavoriteTrue: [{
+        text: '添加收藏',
         style: {
-          backgroundColor: '#3c9cff'
+          backgroundColor: '#f7e4e8'
         }
-      }, {
-        text: '删除',
+      }],
+      isfavoriteFlase: [{
+        text: '取消收藏',
         style: {
-          backgroundColor: '#f56c6c'
+          backgroundColor: '#f7e4e8'
         }
       }]
     };
@@ -219,40 +248,50 @@ var _default = {
   onLoad: function onLoad() {
     this.getDatalist();
   },
+  onShow: function onShow() {
+    this.getDatalist();
+  },
   methods: {
+    isFavorite: function isFavorite(favoriteList) {
+      return favoriteList.indexOf(this.openid) !== -1;
+    },
     change: function change() {},
     // 滑动卡片按钮点击事件
-    oprationHandler: function oprationHandler(props) {
+    oprationHandler: function oprationHandler(props, item) {
+      var _this = this;
       // name: props参数name的值，index: 第几个按钮被点击
       var name = props.name,
         index = props.index;
-      console.log('name---', name);
-      console.log('index---', index);
-      // 先判断用户是否登录 
-      // if (!this.login)
-      // 	return this.$refs.uToast.show({
-      // 		type: 'error',
-      // 		message: '请先登录再收藏',
-      // 		position: 'top'
-      // 	});
+      if (!this.login) return this.$refs.uToast.show({
+        type: 'error',
+        message: '请先登录再操作',
+        position: 'top'
+      });
       // 执行更新商品信息
       uniCloud.callFunction({
         name: 'uploadCommodity',
         data: {
-          opration: 'collect',
-          openid: this.openid
+          opration: name,
+          openid: this.openid,
+          commodityInfo: item
         }
       }).then(function (res) {
-        console.log('收藏商品返回的信息---', res);
+        _this.$refs.uToast.show({
+          type: 'success',
+          message: "".concat(name == 'cancleFavorite' ? '取消成功' : '添加成功'),
+          position: 'top'
+        });
+        // 重新刷新列表
+        _this.getDatalist();
       });
     },
     // 调用扫码查询
     scanningCode: function scanningCode() {
-      var _this = this;
+      var _this2 = this;
       uni.scanCode({
         success: function success(res) {
           var result = res.result;
-          _this.searchKey = result;
+          _this2.searchKey = result;
         }
       });
     },
@@ -260,20 +299,19 @@ var _default = {
       this.getDatalist();
     },
     toDetail: function toDetail(target) {
-      console.log('target---', target);
       uni.navigateTo({
         url: '/pages/commodity/detail/detail?id=' + target._id
       });
     },
     getDatalist: function getDatalist() {
-      var _this2 = this;
+      var _this3 = this;
       uniCloud.callFunction({
         name: 'getCommodityList',
         data: {
           searchKey: this.searchKey
         }
       }).then(function (res) {
-        _this2.commodityData = res.result;
+        _this3.commodityData = res.result;
       });
     }
   }

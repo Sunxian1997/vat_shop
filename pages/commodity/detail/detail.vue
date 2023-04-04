@@ -29,21 +29,30 @@
 		<view class="file-box">
 			<view class="file-item" v-for="(item, index) in detailForm.picUrls" :key="index"><image draggable :src="item" mode="scaleToFill"></image></view>
 		</view>
-		<!-- <u-modal :show="isShowModal" @confirm="modalConfirm" title="删除商品" showCancelButton @cancel="modalCancle">
-			<view class="" v-slot="content">删除后不可恢复，是否确认删除？</view>
-		</u-modal> -->
+
 		<uni-fab ref="fab" :pattern="uniFabParent.pattern" :content="uniFabParent.content" horizontal="right" vertical="bottom" @trigger="trigger" />
-		<u-notify ref="uNotify"></u-notify>
-	</view> 
+		<u-toast ref="uToast"></u-toast>
+		<!-- 普通弹窗 -->
+		<uni-popup ref="popup" :is-mask-click="false" background-color="#fff">
+			<view class="popup-box">
+				<view class="title">删除后不可恢复，请按照提示输入</view>
+				<u--input shape="circle" placeholder="我确认删除" border="surround" v-model="deleteMsg"></u--input>
+				<view class="footer">
+					<u-button text="取消" @click="closePopup"></u-button>
+					<u-button type="primary" @click="confirmPopup" text="确定"></u-button>
+				</view>
+			</view>
+		</uni-popup>
+	</view>
 </template>
 
 <script>
-import { uniFabParent } from '@/const/const.js';
+import { mapState } from 'vuex';
 export default {
 	data() {
 		return {
-			isShowModal: false,
-			uniFabParent,
+			deleteMsg: '',
+			// uniFabParent:,
 			detailForm: {}
 		};
 	},
@@ -51,21 +60,94 @@ export default {
 		const { id } = e;
 		this.getDetail(id);
 	},
-	methods: {
-		modalCancle() {
-			this.isShowModal = !this.isShowModal;
+	computed: { 
+		...mapState(['login', 'openid']),
+		isFavorite() {
+			const { favoriteList } = this.detailForm;
+			return favoriteList && favoriteList.indexOf(this.openid) !== -1;
 		},
-		modalConfirm() {
-			this.deleteCommodity(this.detailForm._id);
+		uniFabParent(){
+			return  {
+				pattern: {
+					color: '#7A7E83',
+					backgroundColor: '#fff',
+					selectedColor: '#007AFF',
+					buttonColor: '#007AFF',
+					iconColor: '#fff'
+				},
+				content: [
+					{
+						iconPath: '/static/img/oprationIcon/delete.png',
+						selectedIconPath: '/static/img/oprationIcon/delete.png',
+						text: '删除',
+						active: false
+					},
+					{
+						iconPath: '/static/img/oprationIcon/edit.png',
+						selectedIconPath: '/static/img/oprationIcon/edit.png',
+						text: '编辑',
+						active: false
+					},
+					{
+						iconPath: '/static/img/oprationIcon/edit.png',
+						selectedIconPath: '/static/img/oprationIcon/edit.png',
+						text: this.isFavorite ? '取消收藏': '添加收藏',
+						active: false
+					}
+				]
+			}
+		}
+	},
+	methods: {
+		confirmPopup() {
+			if (this.deleteMsg != '我确认删除') {
+				this.$refs.uToast.show({
+					message: '输入内容不正确',
+					type: 'error',
+					position: 'top'
+				});
+			} else {
+				this.deleteCommodity(this.detailForm._id);
+			}
+		},
+		closePopup() {
+			this.$refs.popup.close();
 		},
 		trigger(e) {
 			console.log('trigger', e);
 			if (e.index == 0) {
-				this.isShowModal = !this.isShowModal;
-			} else if (e.index == 1) {
+				// this.$refs.confirmDeletionDialog.open();
+				this.$refs.popup.open('bottom');
+			} else if (e.index == 1) { 
 				uni.navigateTo({
-					url: '/pages/commodity/edit/edit?id='+this.detailForm._id
+					url: '/pages/commodity/edit/edit?id=' + this.detailForm._id
 				});
+			} else if (e.index == 2) {
+				if (!this.login)
+					return this.$refs.uToast.show({
+						type: 'error',
+						message: '请先登录再操作',
+						position: 'top'
+					});
+				// 执行更新商品信息
+				uniCloud
+					.callFunction({
+						name: 'uploadCommodity',
+						data: {
+							opration: this.isFavorite ? 'cancleFavorite' : 'addFavorite',
+							openid: this.openid,
+							commodityInfo: this.detailForm
+						}
+					})
+					.then(res => {
+						this.$refs.uToast.show({
+							type: 'success',
+							message: `${this.isFavorite ? '取消':'添加'}收藏成功`,
+							position: 'top'
+						});
+						// 重新获取商品详情信息
+						this.getDetail(this.detailForm._id);
+					});
 			}
 		},
 		formaatMoney(nomey) {
@@ -80,14 +162,10 @@ export default {
 					}
 				})
 				.then(res => {
-					this.$refs.uNotify.show({
-						top: 0,
+					this.$refs.uToast.show({
+						title: '删除商品成功',
 						type: 'success',
-						color: '#fff',
-						message: '删除商品成功',
-						duration: 1000 * 1,
-						fontSize: 20,
-						safeAreaInsetTop: true
+						position: 'top'
 					});
 					setTimeout(() => {
 						uni.reLaunch({
@@ -119,6 +197,19 @@ export default {
 <style lang="scss" scoped>
 .detail-box {
 	padding: 20rpx;
+	.popup-box {
+		padding: 20rpx;
+		.title {
+			text-align: center;
+			font-weight: 600;
+			color: #3c3c3c;
+			margin-bottom: 20rpx;
+		}
+		.footer {
+			display: flex;
+			margin-top: 20rpx;
+		}
+	}
 	.gird {
 		display: flex;
 		align-items: center;

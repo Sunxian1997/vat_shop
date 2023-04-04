@@ -32,11 +32,10 @@
       "outputPath": ""
     },
     "disableUseStrict": false,
-    "useCompilerPlugins": false,
-    "minifyWXML": true
+    "useCompilerPlugins": false
   },
   "compileType": "miniprogram",
-  "libVersion": "2.30.2",
+  "libVersion": "2.30.4",
   "appid": "wx786043dff39fa0cd",
   "projectname": "vat_shop",
   "condition": {},

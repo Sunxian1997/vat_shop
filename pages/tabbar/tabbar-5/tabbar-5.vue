@@ -168,7 +168,7 @@ export default {
 						success: result => {
 							this.popupShow = true;
 							this.$refs.uToast.show({
-								title: '获取用户信息成功',
+								message: '获取用户信息成功',
 								type: 'success',
 								position: 'top'
 							});
@@ -182,7 +182,7 @@ export default {
 						},
 						fail: err => {
 							this.$refs.uToast.show({
-								title: '获取用户信息失败',
+								message: '获取用户信息失败',
 								type: 'error',
 								position: 'top'
 							});
@@ -210,7 +210,7 @@ export default {
 					});
 					this.popupShow = false;
 					this.$refs.uToast.show({
-						title: '用户信息登录成功',
+						message: '用户信息登录成功',
 						type: 'success',
 						position: 'top'
 					});
@@ -218,7 +218,7 @@ export default {
 				})
 				.catch(err => {
 					this.$refs.uToast.show({
-						title: '用户信息登录失败，请重新尝试',
+						message: '用户信息登录失败，请重新尝试',
 						type: 'error',
 						position: 'top'
 					});

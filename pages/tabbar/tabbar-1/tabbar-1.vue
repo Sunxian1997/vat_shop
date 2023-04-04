@@ -10,18 +10,15 @@
 				<text class="btn-search" @click="searchList">搜索</text>
 			</view>
 		</u-sticky>
-		<view class="card-box">
+		<view class="card-box"> 
 			<u-swipe-action autoClose>
 				<view v-for="item in commodityData" :key="item._id" class="commodity-card-box">
 					<u-swipe-action-item
-						@click="oprationHandler"
-						:name="item._id"
-						:options="[
-							{
-								text: '收藏',
-								style: optionStyle
-							}
-						]"
+						@click="
+							props =>  oprationHandler(props, item)
+						"
+						:name="isFavorite(item.favoriteList) ? 'cancleFavorite' : 'addFavorite'"
+						:options="isFavorite(item.favoriteList) ? isfavoriteFlase : isfavoriteTrue"
 					>
 						<commodityCard :cardInfo="item" @click.native="toDetail(item)"></commodityCard>
 					</u-swipe-action-item>
@@ -47,20 +44,19 @@ export default {
 		return {
 			searchKey: '',
 			commodityData: [],
-			optionStyle: {
-				backgroundColor: '#3c9cff'
-			},
-			swipeActionItemOptions: [
+			isfavoriteTrue: [
 				{
-					text: '收藏',
+					text: '添加收藏',
 					style: {
-						backgroundColor: '#3c9cff'
+						backgroundColor: '#f7e4e8'
 					}
-				},
+				}
+			],
+			isfavoriteFlase: [
 				{
-					text: '删除',
+					text: '取消收藏',
 					style: {
-						backgroundColor: '#f56c6c'
+						backgroundColor: '#f7e4e8'
 					}
 				}
 			]
@@ -69,34 +65,44 @@ export default {
 	onLoad() {
 		this.getDatalist();
 	},
-	methods: {  
+	onShow() {
+		this.getDatalist(); 
+	},
+	methods: {
+		isFavorite(favoriteList) {
+			return favoriteList.indexOf(this.openid) !== -1;
+		},
 		change() {},
 		// 滑动卡片按钮点击事件
-		oprationHandler(props) {
+		oprationHandler(props, item) {
 			// name: props参数name的值，index: 第几个按钮被点击
 			const { name, index } = props;
-			console.log('name---', name);
-			console.log('index---', index); 
-			// 先判断用户是否登录 
-			// if (!this.login)
-			// 	return this.$refs.uToast.show({
-			// 		type: 'error',
-			// 		message: '请先登录再收藏',
-			// 		position: 'top'
-			// 	});
+			if (!this.login) 
+				return this.$refs.uToast.show({
+					type: 'error',
+					message: '请先登录再操作',
+					position: 'top'
+				});
 			// 执行更新商品信息
 			uniCloud
 				.callFunction({
-					name: 'uploadCommodity',
+					name: 'uploadCommodity', 
 					data: {
-						opration: 'collect',
-						openid: this.openid
+						opration: name, 
+						openid: this.openid,
+						commodityInfo: item 
 					}
-				})
-				.then(res => {
-					console.log('收藏商品返回的信息---', res);
+				}) 
+				.then(res => { 
+					this.$refs.uToast.show({
+						type: 'success',
+						message: `${name=='cancleFavorite'? '取消成功':'添加成功'}`,
+						position: 'top'
+					});
+					// 重新刷新列表
+					this.getDatalist();
 				});
-		},
+		}, 
 		// 调用扫码查询
 		scanningCode() {
 			uni.scanCode({
@@ -110,7 +116,6 @@ export default {
 			this.getDatalist();
 		},
 		toDetail(target) {
-			console.log('target---', target);
 			uni.navigateTo({
 				url: '/pages/commodity/detail/detail?id=' + target._id
 			});

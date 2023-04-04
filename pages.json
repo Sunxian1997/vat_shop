@@ -15,7 +15,10 @@
 		},
 		{
 			"path": "pages/tabbar/tabbar-3/tabbar-3",
-			"style": {}
+			"style": {
+				"navigationBarTitleText": "发布商品",
+				"navigationBarBackgroundColor": "#f7e4e8"
+			}
 		},
 		{
 			"path": "pages/tabbar/tabbar-4/tabbar-4",
@@ -27,18 +30,6 @@
 				"navigationBarTitleText": "个人信息",
 				"navigationBarBackgroundColor": "#f7e4e8"
 			}
-		},
-		{
-			"path": "pages/tabbar-3-detial/tabbar-3-release/tabbar-3-release",
-			"style": {}
-		},
-		{
-			"path": "pages/tabbar-3-detial/tabbar-3-video/tabbar-3-video",
-			"style": {}
-		},
-		{
-			"path": "pages/tabbar-3-detial/tabbar-3-qa/tabbar-3-qa",
-			"style": {}
 		},
 		{
 			"path": "pages/commodity/add/index",
