@@ -20,7 +20,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss"  scoped>
 .vipCard-box {
 	text-align: left;
 	height: 250rpx;
@@ -29,7 +29,7 @@ export default {
 	box-sizing: border-box;
 	border-radius: 20rpx;
 	display: flex;
-	background: linear-gradient(to top, #ebe8e8, 20%, cyan);
+	background: linear-gradient(to top, #e7b6f3, 20%, #713ded);
 
 	.left {
 		flex: 1;

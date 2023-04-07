@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<u--input :type="urlParams.type === 'nickname' ? 'nickname' : ''" clearable placeholder="请输入" border="surround" v-model="formData[urlParams.type]"></u--input>
+		<u--input :type="isNickName" clearable placeholder="请输入昵称" border="surround" v-model="formData[urlParams.type]"></u--input>
 		<u-button text="完成" type="primary" @click="editUserInfo"></u-button>
 	</view>
 </template>
@@ -9,7 +9,11 @@
 import { mapState } from 'vuex';
 export default {
 	computed: {
-		...mapState(['_id', 'login', 'avatarUrl', 'nickName', 'unionId'])
+		...mapState(['_id', 'login', 'avatarUrl', 'nickName', 'unionId']),
+
+		isNickName() {
+			return this.urlParams.type === 'nickName' ? 'nickname' : '';
+		}
 	},
 	data() {
 		return {
@@ -20,6 +24,7 @@ export default {
 	onLoad(options) {
 		this.urlParams = options;
 		console.log('this.urlParams---', this.urlParams);
+		console.log(' this.nickName---', this.nickName);
 		switch (options.type) {
 			case 'nickName':
 				this.formData['nickName'] = this.nickName;
@@ -59,4 +64,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+	.u-input{
+		height: 60rpx;
+	}
+</style>

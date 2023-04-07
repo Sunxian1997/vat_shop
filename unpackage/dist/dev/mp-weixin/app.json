@@ -3,7 +3,6 @@
     "pages/tabbar/tabbar-1/tabbar-1",
     "pages/tabbar/tabbar-2/tabbar-2",
     "pages/tabbar/tabbar-3/tabbar-3",
-    "pages/tabbar/tabbar-4/tabbar-4",
     "pages/tabbar/tabbar-5/tabbar-5",
     "pages/commodity/add/index",
     "pages/commodity/detail/detail",
@@ -33,22 +32,10 @@
         "text": "首页"
       },
       {
-        "pagePath": "pages/tabbar/tabbar-2/tabbar-2",
-        "iconPath": "static/img/tabbar/tabTwo.png",
-        "selectedIconPath": "static/img/tabbar/tabTwo.png",
-        "text": "点单"
-      },
-      {
         "pagePath": "pages/tabbar/tabbar-3/tabbar-3",
         "iconPath": "static/img/tabbar/add.png",
         "selectedIconPath": "static/img/tabbar/addactive.png",
         "text": "发布"
-      },
-      {
-        "pagePath": "pages/tabbar/tabbar-4/tabbar-4",
-        "iconPath": "static/img/tabbar/tabThree.png",
-        "selectedIconPath": "static/img/tabbar/tabThree.png",
-        "text": "消息"
       },
       {
         "pagePath": "pages/tabbar/tabbar-5/tabbar-5",

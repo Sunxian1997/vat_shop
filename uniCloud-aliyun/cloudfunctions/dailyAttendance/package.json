@@ -1,0 +1,7 @@
+{
+  "name": "dailyAttendance",
+  "dependencies": {},
+  "extensions": {
+    "uni-cloud-jql": {}
+  }
+}

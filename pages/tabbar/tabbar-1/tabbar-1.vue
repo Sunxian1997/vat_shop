@@ -70,7 +70,7 @@ export default {
 	},
 	methods: {
 		isFavorite(favoriteList) {
-			return favoriteList.indexOf(this.openid) !== -1;
+			return favoriteList&&favoriteList.indexOf(this.openid) !== -1;
 		},
 		change() {},
 		// 滑动卡片按钮点击事件

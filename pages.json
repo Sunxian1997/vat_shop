@@ -20,10 +20,10 @@
 				"navigationBarBackgroundColor": "#f7e4e8"
 			}
 		},
-		{
-			"path": "pages/tabbar/tabbar-4/tabbar-4",
-			"style": {}
-		},
+		// {
+		// 	"path": "pages/tabbar/tabbar-4/tabbar-4",
+		// 	"style": {} 
+		// },
 		{
 			"path": "pages/tabbar/tabbar-5/tabbar-5",
 			"style": {
@@ -102,12 +102,12 @@
 				"selectedIconPath": "static/img/tabbar/tabOne.png",
 				"text": "首页"
 			},
-			{
-				"pagePath": "pages/tabbar/tabbar-2/tabbar-2",
-				"iconPath": "static/img/tabbar/tabTwo.png",
-				"selectedIconPath": "static/img/tabbar/tabTwo.png",
-				"text": "点单"
-			},
+			// {
+			// 	"pagePath": "pages/tabbar/tabbar-2/tabbar-2",
+			// 	"iconPath": "static/img/tabbar/tabTwo.png",
+			// 	"selectedIconPath": "static/img/tabbar/tabTwo.png",
+			// 	"text": "点单"
+			// },
 			//#ifdef MP-WEIXIN
 			{
 				"pagePath": "pages/tabbar/tabbar-3/tabbar-3",
@@ -122,13 +122,13 @@
 				"iconPath": "static/img/tabbar/add.png",
 				"selectedIconPath": "static/img/tabbar/addactive.png"
 			},
-			//#endif
-			{
-				"pagePath": "pages/tabbar/tabbar-4/tabbar-4",
-				"iconPath": "static/img/tabbar/tabThree.png",
-				"selectedIconPath": "static/img/tabbar/tabThree.png",
-				"text": "消息"
-			},
+			// //#endif
+			// {
+			// 	"pagePath": "pages/tabbar/tabbar-4/tabbar-4",
+			// 	"iconPath": "static/img/tabbar/tabThree.png",
+			// 	"selectedIconPath": "static/img/tabbar/tabThree.png",
+			// 	"text": "消息"
+			// },
 			{
 				"pagePath": "pages/tabbar/tabbar-5/tabbar-5",
 				"iconPath": "static/img/tabbar/tabFour.png",

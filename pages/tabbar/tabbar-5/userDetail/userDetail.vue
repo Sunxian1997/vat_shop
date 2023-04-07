@@ -26,14 +26,14 @@ export default {
 		return {};
 	},
 	computed: {
-		...mapState(['login', 'avatarUrl', 'nickName','unionId'])
+		...mapState(['login', 'avatarUrl', 'nickName', 'unionId'])
 	},
 	methods: {
-		toEditUserInfo(type){
+		toEditUserInfo(type) {
 			uni.navigateTo({
-				url: '/pages/tabbar/tabbar-5/userDetail/editUserInfo/editUserInfo?type=' + type,
+				url: '/pages/tabbar/tabbar-5/userDetail/editUserInfo/editUserInfo?type=' + type
 			});
-		},
+		}
 	}
 };
 </script>
@@ -44,6 +44,7 @@ export default {
 		display: flex;
 		flex-wrap: wrap;
 		.user-detai-grid-item {
+			height: 60rpx;
 			width: 100%;
 			display: flex;
 			align-items: center;
@@ -61,6 +62,7 @@ export default {
 					flex: 1;
 				}
 				.icon {
+					padding-left: 20rpx;
 				}
 			}
 		}

@@ -17,6 +17,8 @@ const store = new Vuex.Store({
 		language: '',
 		nickName: '',
 		province: '',
+		growthValue: '',
+		lastDailyAttendance:''
 	},
 	mutations: {
 		login(state, provider) {
@@ -34,6 +36,8 @@ const store = new Vuex.Store({
 			state.language = provider.language;
 			state.nickName = provider.nickName;
 			state.province = provider.province;
+			state.growthValue = provider.growthValue;
+			state.lastDailyAttendance = provider.lastDailyAttendance;
 		},
 		logout(state) {
 			state.login = false;
@@ -49,6 +53,8 @@ const store = new Vuex.Store({
 			state.language = '';
 			state.nickName = '';
 			state.province = '';
+			state.growthValue = '';
+			state.lastDailyAttendance = '';
 		}
 	}
 })

@@ -1,6 +1,0 @@
-{
-  "usingComponents": {
-    "u-line-progress": "/uni_modules/uview-ui/components/u-line-progress/u-line-progress"
-  },
-  "component": true
-}

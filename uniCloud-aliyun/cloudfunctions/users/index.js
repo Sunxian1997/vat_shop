@@ -13,9 +13,12 @@ exports.main = async (event, context) => {
 		is_demote,
 		language,
 		nickName,
-		province
-	} = event 
+		province,
+		growthValue,
+		lastDailyAttendance
+	} = event
 	const db = uniCloud.database();
+	const dbCmd = db.command
 	const dbUser = db.collection('users');
 	switch (opration) {
 		case 'update':
@@ -25,6 +28,11 @@ exports.main = async (event, context) => {
 				...oprationData
 			})
 			return updateCurrentUser
+		case 'getUserInfo':
+			const userInfo = await dbUser.where({
+				openid: dbCmd.eq(event.openid)
+			}).get()
+			return userInfo
 		default:
 			// 先查是否存在当前用户
 			const isExistCurrentUser = await dbUser.where({
@@ -42,7 +50,9 @@ exports.main = async (event, context) => {
 					is_demote,
 					language,
 					nickName,
-					province
+					province,
+					growthValue,
+					lastDailyAttendance
 				})
 				return {
 					_id: registerUser.id

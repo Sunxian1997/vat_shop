@@ -29,6 +29,7 @@
   flex-wrap: wrap;
 }
 .user-detai-box .user-detai-grid .user-detai-grid-item.data-v-29f610ce {
+  height: 60rpx;
   width: 100%;
   display: flex;
   align-items: center;
@@ -44,5 +45,8 @@
 }
 .user-detai-box .user-detai-grid .user-detai-grid-item .right .content.data-v-29f610ce {
   flex: 1;
+}
+.user-detai-box .user-detai-grid .user-detai-grid-item .right .icon.data-v-29f610ce {
+  padding-left: 20rpx;
 }
 

@@ -4,7 +4,8 @@
   "usingComponents": {
     "u-icon": "/uni_modules/uview-ui/components/u-icon/u-icon",
     "u-button": "/uni_modules/uview-ui/components/u-button/u-button",
-    "vip-card": "/components/vipCard/vipCard",
+    "u-line-progress": "/uni_modules/uview-ui/components/u-line-progress/u-line-progress",
+    "daily-attendance": "/components/dailyAttendance/dailyAttendance",
     "u-cell-group": "/uni_modules/uview-ui/components/u-cell-group/u-cell-group",
     "u-cell": "/uni_modules/uview-ui/components/u-cell/u-cell",
     "u-toast": "/uni_modules/uview-ui/components/u-toast/u-toast",

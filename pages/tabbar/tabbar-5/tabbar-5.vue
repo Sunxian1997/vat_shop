@@ -6,7 +6,7 @@
 					<view class="left"><img :src="login ? avatarUrl : loginInfo.avatarUrl" /></view>
 					<view class="right">
 						<view class="nickname-top">{{ nickName || '--' }}</view>
-						<view class="wei-xin-number">{{ unionId || '--' }}</view>
+						<view class="wei-xin-number">{{ unionId || '--' }}</view> 
 					</view>
 				</view>
 				<!-- v-if="login" -->
@@ -14,7 +14,19 @@
 			</view>
 			<view v-if="!login" class="login-btn"><u-button class="custom-style" text="点击登录" @click="loginUser"></u-button></view>
 		</view>
-		<view class="vipCard"><vipCard></vipCard></view>
+		<view class="vipCard-box">
+			<view class="left">
+				<view class="title">平价商店会员</view>
+				<view class="growth-value">
+					<text class="title-value">成长值：{{growthValue}}/999</text>
+					<view class="vip-progress"><u-line-progress :percentage="30" height="7" activeColor="white" :showText="false"></u-line-progress></view>
+					<text class="title-tips">正在享受权益中</text>
+				</view>
+			</view>
+			<view class="right">
+				 <dailyAttendance :lastDailyAttendance="lastDailyAttendance" @reFresh="reFresh"/>
+			</view>
+		</view>
 		<u-cell-group>
 			<u-cell
 				icon="fingerprint"
@@ -89,9 +101,13 @@
 
 <script>
 import { mapState } from 'vuex';
+// import vipCard  from "@/components/vipCard/vipCard.vue"
+import dailyAttendance  from "@/components/dailyAttendance/dailyAttendance.vue"
 export default {
+	name: 'personDetail',
 	components: {
-		vipCard: () => import('@/components/vipCard/vipCard.vue')
+		// vipCard: () => import('@/components/vipCard/vipCard.vue')
+		dailyAttendance
 	},
 	data() {
 		return {
@@ -107,7 +123,9 @@ export default {
 				is_demote: true,
 				language: '',
 				nickName: '微信用户',
-				province: ''
+				province: '',
+				growthValue:0,
+				lastDailyAttendance:''
 			}
 		};
 	},
@@ -116,30 +134,48 @@ export default {
 		console.log('this.$store--', this.$store.state);
 	},
 	computed: {
-		...mapState(['login', 'avatarUrl', 'nickName','unionId'])
+		...mapState(['login', 'avatarUrl','openid', 'nickName', 'unionId','growthValue','lastDailyAttendance'])
 	},
 	methods: {
+		reFresh(){
+			uniCloud
+				.callFunction({
+					name: 'users',
+					data: {
+						opration:'getUserInfo',
+						openid:this.openid
+					}
+				})
+				.then(res => {  
+					console.log('reFresh---', res);
+					this.$store.commit('login', {
+						...res.result.data[0]
+					}); 
+				})
+		},
 		toUserDetail() {
 			uni.navigateTo({
-				url: '/pages/tabbar/tabbar-5/userDetail/userDetail'
-			});
+				url: '/pages/tabbar/tabbar-5/userDetail/userDetail'  
+			}); 
 		},
 		popupClose() {
-			this.popupShow = false;
+			this.popupShow = false; 
 		},
-		cancle() {
+		cancle() { 
 			this.loginInfo = {
 				unionId: '',
 				openid: '',
 				session_key: '',
-				avatarUrl: '',
+				avatarUrl: require('../../../static/img/pretty/boy.jpg'),
 				city: '',
 				country: '',
 				gender: 0,
-				is_demote: true,
+				is_demote: true, 
 				language: '',
 				nickName: '微信用户',
-				province: ''
+				province: '',
+				growthValue:0,
+				lastDailyAttendance:''
 			};
 			this.popupShow = false;
 		},
@@ -168,7 +204,7 @@ export default {
 						success: result => {
 							this.popupShow = true;
 							this.$refs.uToast.show({
-								message: '获取用户信息成功',
+								message: '获取用户信息成功', 
 								type: 'success',
 								position: 'top'
 							});
@@ -180,7 +216,7 @@ export default {
 								session_key
 							};
 						},
-						fail: err => {
+						fail: err => {  
 							this.$refs.uToast.show({
 								message: '获取用户信息失败',
 								type: 'error',
@@ -202,7 +238,7 @@ export default {
 					data: this.loginInfo
 				})
 				.then(res => {
-					console.log('注测用户信息接口---', res);
+					console.log('注测用户信息接口---', res); 
 					// 本地记录登录用户
 					this.$store.commit('login', {
 						...this.loginInfo,
@@ -230,8 +266,10 @@ export default {
 
 <style lang="scss" scoped>
 .box {
-	height: 400rpx;
+	height: 100%;
 	padding: 20rpx;
+	position: relative;
+	// background-color: $uni-bg-color-theme;
 	.card {
 		display: flex;
 		width: 100%;
@@ -275,8 +313,52 @@ export default {
 			}
 		}
 	}
-	.vipCard {
-		margin-bottom: 40rpx;
+	.vipCard-box {
+		margin-bottom: 100rpx;
+		text-align: left;
+		height: 250rpx;
+		width: 100%;
+		padding: 30rpx 20rpx;
+		box-sizing: border-box;
+		border-radius: 20rpx;
+		display: flex;
+		background: linear-gradient(to top, #e7b6f3, 20%, #713ded);
+
+		.left {
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			.title {
+				color: white;
+				font-weight: 600;
+				text-align: left;
+			}
+			.growth-value {
+				flex: 1;
+				color: white;
+				display: flex;
+				flex-wrap: wrap;
+				.title-value,
+				.title-tips {
+					width: 100%;
+				}
+				.title-value{
+					margin-top: 30rpx;
+				}
+				.vip-progress {
+					width: 100%;
+					.u-line-progress {
+						margin: 10rpx 0 20rpx 0;
+					}
+				}
+			}
+		}
+		.right {
+			width: 300rpx;
+			display: flex;
+			justify-content: center;
+		}
 	}
 	.user-info {
 		padding: 20rpx;
@@ -333,5 +415,13 @@ export default {
 			}
 		}
 	}
+	
+	.u-cell-group{
+		position: absolute;
+		bottom: 80rpx;
+		left: 0;
+		right: 0;
+	}
+	
 }
 </style>

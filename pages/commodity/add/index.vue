@@ -127,7 +127,6 @@ export default {
 						const params = {
 							...this.formData.baseInfo,
 							picUrls: this.picUrls,
-							favoriteList:['oWkaR5Ys-lHhrFGOWt2EgwiOaRs0']
 						};
 						uniCloud
 							.callFunction({
